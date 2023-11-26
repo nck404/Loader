@@ -1,15 +1,12 @@
-import requests ,json,time,os,pyperclip,string,colorama,sys,ctypes,webbrowser,shutil,subprocess
-from tqdm import tqdm
-from colorama import Back, Fore, Style ,Fore
-from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
-def setTitle (_O0O000O0000000OOO ):#line:1
-    O0O0O0O0OOO00OOOO =os .name #line:2
-    if O0O0O0O0OOO00OOOO =='nt':#line:3
-        ctypes .windll .kernel32 .SetConsoleTitleW (_O0O000O0000000OOO )#line:4
-    elif O0O0O0O0OOO00OOOO =='posix':#line:5
-        sys .stdout .write (_O0O000O0000000OOO )#line:6
-    else :#line:7
-        pass #line:8
+import requests,time,os,colorama,sys,ctypes,webbrowser,shutil
+from pystyle import  Center, Anime, Colors, Colorate, Write
+def setTitle(title):
+    if os.name == 'nt':
+        ctypes.windll.kernel32.SetConsoleTitleW(title)
+    elif os.name == 'posix':
+        sys.stdout.write(title)
+    else:
+        pass
 global cls
 def cls():
  os.system('cls' if os.name=='nt' else 'clear')
@@ -29,7 +26,7 @@ def download(link):
     save_path = url.split("/")[-1]
     download_file(url, save_path, show_progress=True)
     time.sleep(1.5)
-    home()
+    chose()
 def fetch_link_from_json(json_url, choice):
     try:
         response = requests.get(json_url)
@@ -43,6 +40,19 @@ def fetch_link_from_json(json_url, choice):
             return "Failed to fetch JSON from URL"
     except requests.exceptions.RequestException:
         return enenror()
+def fs(json_url, choice):
+    try:
+        response = requests.get(json_url)
+        if response.status_code == 200:
+            data = response.json()
+            for entry in data["data"]:
+                if entry["choice"] == choice:
+                    return entry["link"], entry["text"]
+            return "Choice not found in JSON", ""
+        else:
+            return "Failed to fetch JSON from URL", ""
+    except requests.exceptions.RequestException as e:
+        return f"Failed to fetch JSON from URL, Error: {e}", ""
 def download_file(url, save_path, show_progress=True):
     try:
         response = requests.get(url, stream=True)
@@ -63,14 +73,14 @@ def download_file(url, save_path, show_progress=True):
         webbrowser.open("file://" + download_folder)
     except Exception as e:
         Write.Print(f"     ~/> An error occurred: {str(e)}",Colors.blue_to_white, interval=0.000)
-user = "dev : necakco"
-json_file = "https://raw.githubusercontent.com/frenda-r/cheatclop/main/fetch/app.json"
-app =  'https://raw.githubusercontent.com/frenda-r/cheatclop/main/fetch/app.txt'
+# chose
+chosetext = "https://cheatcl-file.web.app/fetch/chose/chose.txt"
+chosejson = "https://cheatcl-file.web.app/fetch/chose/chose.json"
 def enenror():
     Write.Print("       > NOT FOUND | wait 4s coninue", Colors.blue_to_white, interval=0.000)
     time.sleep(1.5)
-    home()        
-def home():
+    chose() 
+def chose():
     setTitle(f"NCK Launcher")
     clear = lambda: os.system('cls')
     clear()
@@ -78,16 +88,15 @@ def home():
     info()
     print('\n \n')
     Write.Print(f"""
-    ███╗   ███╗ ██████╗    ██╗      ██████╗  █████╗ ██████╗ ███████╗██████╗         
-    ████╗ ████║██╔════╝    ██║     ██╔═══██╗██╔══██╗██╔══██╗██╔════╝██╔══██╗        
-    ██╔████╔██║██║         ██║     ██║   ██║███████║██║  ██║█████╗  ██████╔╝        
-    ██║╚██╔╝██║██║         ██║     ██║   ██║██╔══██║██║  ██║██╔══╝  ██╔══██╗        
-    ██║ ╚═╝ ██║╚██████╗    ███████╗╚██████╔╝██║  ██║██████╔╝███████╗██║  ██║   - by nck      
-    ╚═╝     ╚═╝ ╚═════╝    ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝   - for Blockgame cheater     
+                      ___ _                _     ___   __  
+                     / __\ |__   ___  __ _| |_  / __\ / /  
+                    / /  | '_ \ / _ \/ _` | __|/ /   / /   
+                   / /___| | | |  __/ (_| | |_/ /___/ /___ 
+                   \____/|_| |_|\___|\__,_|\__\____/\____/ 
     """,Colors.red_to_white, interval=0)
     print('\n')
     try:
-        response = requests.get(app)
+        response = requests.get(chosetext)
         if response.status_code == 200:
             Write.Print(response.text,Colors.red_to_white, interval=0.000)
         else:
@@ -96,8 +105,21 @@ def home():
         print(f"falled: {e}")
     print()
     choice = Write.Input(f'     ~/> ',Colors.blue_to_white ,interval=0.000)
-    link = fetch_link_from_json(json_file, choice)
-    download(link)
+    link, text_link = fs(chosejson, choice)
+
+    if link and text_link:
+        cls()
+        print(f" Page {choice} - 0 to go back")
+        text = requests.get(text_link).text
+        Write.Print(text,Colors.red_to_white, interval=0.000)
+        choice = Write.Input(f'     ~/> ',Colors.blue_to_white ,interval=0.000)
+        if (choice == "0") :
+            chose()
+        link = fetch_link_from_json(link, choice)
+        download(link)
+    else:
+        cls()
+        input("Error fetching data . Press ENTER to close. ")
 banner = r"""               
                                         ███╗   ██╗███████╗ █████╗ ██╗ ██████╗ 
                                         ████╗  ██║██╔════╝██╔══██╗██║██╔═══██╗
@@ -108,5 +130,4 @@ banner = r"""
                                                   Press ENTER to open.                                                                                      
 """[0:]
 Anime.Fade(Center.Center(banner), Colors.black_to_white, Colorate.Vertical, enter=True)
-cls()
-home()
+chose()
