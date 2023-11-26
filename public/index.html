@@ -1,89 +1,335 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CheatCl.exe</title>
+        <link rel="shortcut icon" href="https://necakco.github.io/assest/favicon.ico" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+    </head>
+    <body>
+        <div class="content">
+            <div class="audio-icon">
+                <button id="button-play-music">
+                    <box-icon name="volume-full" flip="vertical" animation="tada" size="lg" color="#7CD2BF"></box-icon>
+                    <audio
+                        id="audio"
+                        src="https://cdn.discordapp.com/attachments/1102627831378366644/1120604779790479392/y2mate.com_-_my_ordinary_life_speed_up.mp3"
+                    ></audio>
+                </button>
+            </div>
+            <h1 class="title">
+                WD loader
+                <div class="aurora">
+                    <div class="aurora__item"></div>
+                    <div class="aurora__item"></div>
+                    <div class="aurora__item"></div>
+                    <div class="aurora__item"></div>
+                </div>
+            </h1>
+            <p class="subtitle">idk.</p>
+            <a href="https://firebasestorage.googleapis.com/v0/b/cheatcl-file.appspot.com/o/wd.zip?alt=media&token=c0b4610b-924f-490e-b0ab-34cb50cdfcdf">
+                <button class="button1">Download</button>
+            </a>
+        </div>
+        <style>
+            .button1 {
+                --glow-color: rgb(217, 176, 255);
+                --glow-spread-color: rgba(191, 123, 255, 0.781);
+                --enhanced-glow-color: rgb(231, 206, 255);
+                --btn-color: rgb(100, 61, 136);
+                border: 0.25em solid var(--glow-color);
+                padding: 1em 3em;
+                color: var(--glow-color);
+                font-size: 15px;
+                font-weight: bold;
+                background-color: var(--btn-color);
+                border-radius: 1em;
+                outline: none;
+                box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 4em 1em var(--glow-spread-color),
+                    inset 0 0 0.75em 0.25em var(--glow-color);
+                text-shadow: 0 0 0.5em var(--glow-color);
+                position: relative;
+                transition: all 0.3s;
+            }
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.6.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.6.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.6.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.6.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.6.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.6.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.6.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.6.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.6.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.6.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+            .button1::after {
+                pointer-events: none;
+                content: "";
+                position: absolute;
+                top: 120%;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: var(--glow-spread-color);
+                filter: blur(2em);
+                opacity: 0.7;
+                transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+            }
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+            .button1:hover {
+                color: var(--btn-color);
+                background-color: var(--glow-color);
+                box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 4em 2em var(--glow-spread-color),
+                    inset 0 0 0.75em 0.25em var(--glow-color);
+            }
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+            .button1:active {
+                box-shadow: 0 0 0.6em 0.25em var(--glow-color), 0 0 2.5em 2em var(--glow-spread-color),
+                    inset 0 0 0.5em 0.25em var(--glow-color);
+            }
+            @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+            :root {
+                --bg: #000000;
+                --clr-1: #00c2ff;
+                --clr-2: #33ff8c;
+                --clr-3: #ffc640;
+                --clr-4: #e54cff;
+
+                --blur: 1rem;
+                --fs: clamp(3rem, 8vw, 7rem);
+                --ls: clamp(-1.75px, -0.25vw, -3.5px);
+            }
+
+            body {
+                min-height: 100vh;
+                display: grid;
+                place-items: center;
+                background-color: var(--bg);
+                color: #fff;
+                font-family: "Inter", "DM Sans", Arial, sans-serif;
+            }
+
+            *,
+            *::before,
+            *::after {
+                font-family: inherit;
+                box-sizing: border-box;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: var(--fs);
+                font-weight: 800;
+                letter-spacing: var(--ls);
+                position: relative;
+                overflow: hidden;
+                background: var(--bg);
+                margin: 0;
+            }
+
+            .subtitle {
+                font-size: 21px;
+            }
+
+            .aurora {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                mix-blend-mode: darken;
+                pointer-events: none;
+            }
+
+            .aurora__item {
+                overflow: hidden;
+                position: absolute;
+                width: 60vw;
+                height: 60vw;
+                background-color: var(--clr-1);
+                border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+                filter: blur(var(--blur));
+                mix-blend-mode: overlay;
+            }
+
+            .aurora__item:nth-of-type(1) {
+                top: -50%;
+                animation: aurora-border 6s ease-in-out infinite, aurora-1 12s ease-in-out infinite alternate;
+            }
+
+            .aurora__item:nth-of-type(2) {
+                background-color: var(--clr-3);
+                right: 0;
+                top: 0;
+                animation: aurora-border 6s ease-in-out infinite, aurora-2 12s ease-in-out infinite alternate;
+            }
+
+            .aurora__item:nth-of-type(3) {
+                background-color: var(--clr-2);
+                left: 0;
+                bottom: 0;
+                animation: aurora-border 6s ease-in-out infinite, aurora-3 8s ease-in-out infinite alternate;
+            }
+
+            .aurora__item:nth-of-type(4) {
+                background-color: var(--clr-4);
+                right: 0;
+                bottom: -50%;
+                animation: aurora-border 6s ease-in-out infinite, aurora-4 24s ease-in-out infinite alternate;
+            }
+
+            @keyframes aurora-1 {
+                0% {
+                    top: 0;
+                    right: 0;
+                }
+
+                50% {
+                    top: 100%;
+                    right: 75%;
+                }
+
+                75% {
+                    top: 100%;
+                    right: 25%;
+                }
+
+                100% {
+                    top: 0;
+                    right: 0;
+                }
+            }
+
+            @keyframes aurora-2 {
+                0% {
+                    top: -50%;
+                    left: 0%;
+                }
+
+                60% {
+                    top: 100%;
+                    left: 75%;
+                }
+
+                85% {
+                    top: 100%;
+                    left: 25%;
+                }
+
+                100% {
+                    top: -50%;
+                    left: 0%;
+                }
+            }
+
+            @keyframes aurora-3 {
+                0% {
+                    bottom: 0;
+                    left: 0;
+                }
+
+                40% {
+                    bottom: 100%;
+                    left: 75%;
+                }
+
+                65% {
+                    bottom: 40%;
+                    left: 50%;
+                }
+
+                100% {
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+
+            @keyframes aurora-4 {
+                0% {
+                    bottom: -50%;
+                    right: 0;
+                }
+
+                50% {
+                    bottom: 0%;
+                    right: 40%;
+                }
+
+                90% {
+                    bottom: 50%;
+                    right: 25%;
+                }
+
+                100% {
+                    bottom: -50%;
+                    right: 0;
+                }
+            }
+
+            @keyframes aurora-border {
+                0% {
+                    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+                }
+
+                25% {
+                    border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+                }
+
+                50% {
+                    border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+                }
+
+                75% {
+                    border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+                }
+
+                100% {
+                    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+                }
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+            .audio-icon {
+                position: fixed;
+                bottom: 20px;
+                width: 55px;
+                height: 55px;
+                right: 20px;
+                z-index: 9999;
+                transition: all 0.5s ease-in-out;
+                border-radius: 10px;
+                align-content: center;
+                box-shadow: 0 0 10px 5px #c1c1c120;
+                background: rgba(0, 0, 0, 0.5);
+                filter: drop-shadow(0px 0px 10px #272733);
+            }
+            #button-play-music {
+                background-color: transparent;
+                border: 0px;
+                width: 100%;
+                height: 100%;
+                align-items: center;
+            }
+            box-icon {
+                transition: linear 0.25s;
+            }
+        </style>
+        <script>
+            const audio = document.getElementById("audio");
+            const audioButton = document.getElementById("button-play-music");
+            const audioIcon = audioButton.querySelector("box-icon");
+
+            audioButton.addEventListener("click", function () {
+                if (audio.paused) {
+                    audio.play();
+                    audioIcon.setAttribute("name", "volume-mute");
+                } else {
+                    audio.pause();
+                    audioIcon.setAttribute("name", "volume-full");
+                }
+            });
+            // Create context and nodes
+           
+        </script>
+        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    </body>
 </html>
