@@ -26,15 +26,23 @@ def download(link):
     save_path = url.split("/")[-1]
     download_file(url, save_path, show_progress=True)
     time.sleep(1.5)
-    chose()
+def open_link(link):
+    try:
+        webbrowser.open(link)
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
 def fetch_link_from_json(json_url, choice):
     try:
         response = requests.get(json_url)
         if response.status_code == 200:
             data = response.json()
             for entry in data["data"]:
-                if entry["choice"] == choice:
+                if (entry["choice"] == choice)and(entry["type"] == "download"):
                     return entry["link"]
+                elif (entry["choice"] == choice)and(entry["type"] == "link"):
+                    open_link(entry["link"])
+                    cls()
+                    chose()
             return enenror()
         else:
             return "Failed to fetch JSON from URL"
@@ -71,6 +79,8 @@ def download_file(url, save_path, show_progress=True):
         shutil.move(save_path, downloaded_file_path)
         Write.Print(f"     ~/> Moved the file to Downloads folder: {downloaded_file_path}",Colors.blue_to_white, interval=0.000)
         webbrowser.open("file://" + download_folder)
+        cls()
+        chose()
     except Exception as e:
         Write.Print(f"     ~/> An error occurred: {str(e)}",Colors.blue_to_white, interval=0.000)
 # chose
