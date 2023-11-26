@@ -1,0 +1,42 @@
+    1.Optimize
+  -----------------------------------------------------------------------------------------   
+    [1.1] - Optimizer.exe     
+    [1.2] - Memnory reduct    
+    [1.3] - AIO Optimize
+
+    2.Tool
+  -----------------------------------------------------------------------------------------   
+    [2.1] - ColorPicker             | [2.5] - active window  + office
+    [2.2] - Youtube downloader      | [2.6] - 7zip
+    [2.3] - clumsy - pingchanger    | [2.7] - winRar
+    [2.4] - TimerResolution         |
+    
+    3.theme
+  -----------------------------------------------------------------------------------------   
+    [3.1] - themetool.exe           | [3.5] - 7tsp_gui
+    [3.2] - iconpack                | [3.6] - push video wallpaper
+    [3.3] - theme window 10         | 
+    [3.4] - theme window 11         |
+
+    4.code
+  -----------------------------------------------------------------------------------------   
+    [4.1] - python                  | [4.5] - jdk + jre
+    [4.2] - nodejs                  | [4.6] - pascal 
+    [4.3] - sublime text            | [4.7] - bootstrap studio
+    [4.4] - codeblock               | [4.8] - Inno Setup
+
+    5.media | abode | resource
+   -----------------------------------------------------------------------------------------
+    [5.1] - Abode media             | [5.5] - Preset      | [5.8] - obs
+    [5.2] - Abode Photoshop         | [5.6] - plugin      | [5.9] - tekno blur
+    [5.3] - Abode Premiere Pro      | [5.7] - font pack   |
+    [5.4] - Abode After Effect      | [5.8] - Ocam        |
+
+    6.Other | Driver | lmao
+  -----------------------------------------------------------------------------------------   
+    [6.1] - Unikey                  | [6.5] - FireFox             | [6.9] - .Net driver
+    [6.2] - shareX                  | [6.6] - Rufus               | [6.10] - visual c++ driver
+    [6.3] - Window terminal         | [6.7] - balena              | [6.11] - directX
+    [6.4] - Chrome setup            | [6.8] - Driverbooster 9 Pro | [6.12] - uwp app
+
+    
