@@ -5,15 +5,21 @@
         "link": "https://cheatcl-file.web.app/fetch/app/app.json",
         "text": "https://cheatcl-file.web.app/fetch/app/app.txt"
       },
+ 
       {
         "choice": "1.2",
-        "link": "https://github.com/ncks199/a/releases/download/app/memreduct-3.4-setup.exe",
-        "text": "https://github.com/ncks199/a/releases/download/app/memreduct-3.4-setup.exe"
+        "link": "https://cheatcl-file.web.app/fetch/game/csgo/csgo.json",
+        "text": "https://cheatcl-file.web.app/fetch/game/csgo/csgo.txt"
+      },
+      {
+        "choice": "1.8",
+        "link": "https://cheatcl-file.web.app/fetch/game/minecraft/mc.json",
+        "text": "https://cheatcl-file.web.app/fetch/game/minecraft/mc.txt"
       },
       {
         "choice": "1.3",
-        "link": "https://cheatcl-file.web.app/fetch/game/minecraft/mc.json",
-        "text": "https://cheatcl-file.web.app/fetch/game/minecraft/mc.txt"
+        "link": "https://cheatcl-file.web.app/fetch/game/web.json",
+        "text": "https://cheatcl-file.web.app/fetch/game/web.txt"
       }
     ]
   }

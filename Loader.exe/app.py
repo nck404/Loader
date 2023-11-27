@@ -1,6 +1,3 @@
-
-
-
 import time,os,sys,ctypes,webbrowser,shutil
 try:
     import requests,colorama
@@ -9,7 +6,9 @@ except:
     os.system("pip install requests && pip install pystyle && pip install colorama")
 import requests,colorama
 from pystyle import  Center, Anime, Colors, Colorate, Write 
-
+# import time,os,sys,ctypes,webbrowser,shutil
+# import requests,colorama
+# from pystyle import  Center, Anime, Colors, Colorate, Write 
 def setTitle(title):
     if os.name == 'nt':
         ctypes.windll.kernel32.SetConsoleTitleW(title)
@@ -48,7 +47,9 @@ def fetch_link_from_json(json_url, choice):
             data = response.json()
             for entry in data["data"]:
                 if (entry["choice"] == choice)and(entry["type"] == "download"):
-                    return entry["link"]
+                    download(entry["link"])
+                    cls()
+                    chose()
                 elif (entry["choice"] == choice)and(entry["type"] == "link"):
                     open_link(entry["link"])
                     cls()
@@ -127,19 +128,19 @@ def chose():
     choice = Write.Input(f'     ~/> ',Colors.blue_to_white ,interval=0.000)
     link, text_link = fs(chosejson, choice)
 
-    if link and text_link:
+    if (choice == "0") :
+         cls()
+         chose()
+    elif link and text_link:
         cls()
         print(f" Page {choice} - 0 to go back")
         text = requests.get(text_link).text
         Write.Print(text,Colors.red_to_white, interval=0.000)
         choice = Write.Input(f'     ~/> ',Colors.blue_to_white ,interval=0.000)
-        if (choice == "0") :
-            chose()
-        link = fetch_link_from_json(link, choice)
-        download(link)
+        fetch_link_from_json(link, choice)
     else:
         cls()
-        input("Error fetching data . Press ENTER to close. ")
+        enenror()
 banner = r"""               
                                         ███╗   ██╗███████╗ █████╗ ██╗ ██████╗ 
                                         ████╗  ██║██╔════╝██╔══██╗██║██╔═══██╗

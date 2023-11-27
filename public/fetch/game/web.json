@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "choice": "1",
+      "link": "https://cheatcl.web.app",
+      "type": "link"
+    },
+    {
+      "choice": "2",
+      "link": "https://cheatcl.web.app/discord",
+      "type": "link"
+    },
+    {
+      "choice": "3",
+      "link": "https://youtube.com/@necakco",
+      "type": "link"
+    }
+  ]
+}
