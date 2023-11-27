@@ -1,5 +1,15 @@
-import requests,time,os,colorama,sys,ctypes,webbrowser,shutil
-from pystyle import  Center, Anime, Colors, Colorate, Write
+
+
+
+import time,os,sys,ctypes,webbrowser,shutil
+try:
+    import requests,colorama
+    from pystyle import  Center, Anime, Colors, Colorate, Write
+except:
+    os.system("pip install requests && pip install pystyle && pip install colorama")
+from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
+
+
 def setTitle(title):
     if os.name == 'nt':
         ctypes.windll.kernel32.SetConsoleTitleW(title)
