@@ -4,11 +4,11 @@
 import time,os,sys,ctypes,webbrowser,shutil
 try:
     import requests,colorama
-    from pystyle import  Center, Anime, Colors, Colorate, Write
+    from pystyle import  Center, Anime, Colors, Colorate, Write 
 except:
     os.system("pip install requests && pip install pystyle && pip install colorama")
-from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
-
+import requests,colorama
+from pystyle import  Center, Anime, Colors, Colorate, Write 
 
 def setTitle(title):
     if os.name == 'nt':
