@@ -1,10 +1,3 @@
-#/usr/bin/env python
-# -*- coding: utf-8 -*-
-#
-# Author: James Kessler (<kessle10@gmail.com>)
-#
-
-"""Builds a single Windows executable from a Python script."""
 
 import os
 import sys
@@ -12,7 +5,9 @@ try:
     from distutils.core import setup
     import py2exe
 except ImportError:
-    sys.exit("Install distutils and py2exe")
+    os.system("pip install py2exe")
+import py2exe
+from distutils.core import setup
 icon_path = 'logo.ico'
 # the python file to build into an exe
 # if it's not set, use the first file with .py extension
