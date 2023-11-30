@@ -12,14 +12,24 @@
         "text": "https://cheatcl-file.web.app/fetch/game/csgo/csgo.txt"
       },
       {
+        "choice": "1.3",
+        "link": "https://cheatcl-file.web.app/fetch/game/web.json",
+        "text": "https://cheatcl-file.web.app/fetch/game/web.txt"
+      },
+      {
+        "choice": "1.7",
+        "link": "https://cheatcl-file.web.app/fetch/game/web.json",
+        "text": "https://cheatcl-file.web.app/fetch/game/web.txt"
+      },
+      {
         "choice": "1.8",
         "link": "https://cheatcl-file.web.app/fetch/game/minecraft/mc.json",
         "text": "https://cheatcl-file.web.app/fetch/game/minecraft/mc.txt"
       },
       {
-        "choice": "1.3",
-        "link": "https://cheatcl-file.web.app/fetch/game/web.json",
-        "text": "https://cheatcl-file.web.app/fetch/game/web.txt"
+        "choice": "1.9",
+        "link": "https://cheatcl-file.web.app/fetch/dev/dev.json",
+        "text": "https://cheatcl-file.web.app/fetch/dev/dev.txt"
       }
     ]
   }
