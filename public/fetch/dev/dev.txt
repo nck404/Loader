@@ -7,13 +7,13 @@
 
     1.
   -----------------------------------------------------------------------------------------   
-    [1.1] - jre-jdk                 | [1.4] - nodejs
-    [1.2] - python                  | [1.5] - git
-    [1.3] - mingw                   |
+    [1.1] - jre-jdk                 | [1.4] - nodejs    | [1.7] - xampp
+    [1.2] - python                  | [1.5] - git       |
+    [1.3] - mingw                   | [1.6] - putty     |
 
     2.ide
   -----------------------------------------------------------------------------------------   
-    [2.1] - vscode                  | [2.5] - 
-    [2.2] - visual studio code      | [2.6] - 7zip
-    [2.3] - sublimetext             | [2.7] - winRar
-    [2.4] - Electron Fiddle         |
+    [2.1] - vscode                  | [2.5] - eclipse    | [2.9] - android studio
+    [2.2] - visual studio code      | [2.6] - pycharm    | [2.10] -  
+    [2.3] - sublimetext             | [2.7] - intellij   |
+    [2.4] - Electron Fiddle         | [2.8] - Obsidian   |

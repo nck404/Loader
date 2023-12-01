@@ -94,6 +94,7 @@ def download_file(url, save_path, show_progress=True):
         chose()
     except Exception as e:
         Write.Print(f"     ~/> An error occurred: {str(e)}",Colors.blue_to_white, interval=0.000)
+        enenror()
 # chose
 chosetext = "https://cheatcl-file.web.app/fetch/chose/chose.txt"
 chosejson = "https://cheatcl-file.web.app/fetch/chose/chose.json"
