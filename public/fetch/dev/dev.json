@@ -1,99 +1,25 @@
 {
   "data": [
+   
     {
-      "choice": "1.1",
-      "link": "https://github.com/ncks199/a/releases/download/app/Optimizer-16.1.exe",
-      "type": "download"
-    },
-    {
-      "choice": "1.2",
-      "link": "https://github.com/ncks199/a/releases/download/app/memreduct-3.4-setup.exe",
+      "choice": "2.1",
+      "link": "https://code.visualstudio.com/",
       "type": "link"
     },
     {
-      "choice": "1.3",
-      "link": "https://download1073.mediafire.com/z04dq4ivdcdgT6YZEu7xWqtivLk7E7md0pYSzOtPq7uoxF5DUR1dKYaeI1KrKP2JK_snKM0LT2aIc_nvIi9I4HB_N1vx-02NqJHYNWHMuLc26QNWi4HQARp-UqlMUvfbK9Us3Exs-gEoyiqI46XGmBRSh-OBPoWmwOSGXFqq2d8/erbukdhv61ytoyo/Activate+AIO+Tools+v3.1.3+-+%5BNATUTOOL-COM%5D.7z",
-      "type": "download"
+      "choice": "1.5",
+      "link": "https://git-scm.com/downloads",
+      "type": "link"
     },
     {
-      "choice": "2.1",
-      "link": "https://github.com/ncks199/a/releases/download/app/Colorpicker.Setup.2.2.0.exe"
+      "choice": "2,8",
+      "link": "https://obsidian.md/",
+      "type": "link"
     },
     {
-      "choice": "2.3",
-      "link": "https://github.com/ncks199/a/releases/download/app/clumsy-0.3-win64-a.zip"
-    },
-    {
-      "choice": "2.4",
-      "link": "https://github.com/ncks199/a/releases/download/app/TimerResolution.2.2.zip"
-    },
-    {
-      "choice": "2.5",
-      "link": "https://download1073.mediafire.com/ffa2z9sof4tg7LVT3LGfxdN1_PxPuG_dI0pWtlo0usRs5-xuf5KD7x772ULl1SK0Flb8NoFy0_EPE_mEYRY1m9lBFpzG0IT5ftSIjN0nfqg9XYFPkW4lTczy5ensi_b3TlAMdbU_iD8JQ7cEuRsqVWtxfjkj4K7Rkcz44oUB3qw/erbukdhv61ytoyo/Activate+AIO+Tools+v3.1.3+-+%5BNATUTOOL-COM%5D.7z"
-    },
-    {
-      "choice": "2.6",
-      "link": "https://download2391.mediafire.com/7w5tzptb7tsg7A9beydIcSsfKMtg5YppxpE49uc5Fc3JEvOkYlc45g4hDtaNUcIiKrAWK4SEWcAJWdF4RYgKrbXfL8PWnSNac9GFAg8fOAIzv3OkbH6gxJVtMS5uvK9oBKXLGcNnbmMyLKabrbWvTWrrufe62H4aXq4b4n21uNo/u37e3f7evg12zeb/7z2201-x64.exe"
-    },
-    {
-      "choice": "2.7",
-      "link": "https://github.com/ncks199/a/releases/download/app/winrar-x64-624.exe"
-    },
-    {
-      "choice": "3.1",
-      "link": "https://github.com/ncks199/a/releases/download/app/ThemeTool.exe"
-    },
-    {
-      "choice": "3.6",
-      "link": "https://github.com/frenda-r/-/releases/download/2/PUSHVideoWallpaper.7z"
-    },
-    {
-      "choice": "4.3",
-      "link": "https://download1523.mediafire.com/xuk4guii69fgiuu5Wmgd9A9aWj3IGNFnvTSNcSJrKOSgdDljbUBGDG7GFLO1nDu2RJqsZ3UWgG5jP8EvC5KDZMEGL7KXVIMLGr2LbA59Bg_VT3V-NpjuDGzZ5bjCINnyEfF8CcVAodr2zlldGRvs87LfkHCNQT-5oTFJdfHtYBU/0l9wlnlwk1n9wt8/sublime_text_build_4152_x64_setup.exe"
-    },
-    {
-      "choice": "4.5",
-      "link": "https://github.com/ncks199/a/releases/download/app/Downloads.rar"
-    },
-    {
-      "choice": "4.6",
-      "link": "https://github.com/ncks199/a/releases/download/app/fpc-3-2-2-i386-win32.exe"
-    },
-    {
-      "choice": "4.7",
-      "link": "https://github.com/ncks199/a/releases/download/app/fpc-3-2-2-i386-win32.exe"
-    },
-    {
-      "choice": "4.8",
-      "link": "https://github.com/ncks199/a/releases/download/app/fpc-3-2-2-i386-win32.exe"
-    },
-    {
-      "choice": "5.1",
-      "link": "https://github.com/ncks199/a/releases/download/app/Adobe.Media.Encoder.2023.v23.4.0.47.x64.Multilingual.Pre-Activated.1.zip"
-    },
-    {
-      "choice": "5.2",
-      "link": "https://download1518.mediafire.com/aa1jvkdtk0nguizz5bUjwJoNXZwCsUfd4tvKG1A9iqFpl1GY0GqDSvzPTKqNuH6fpM6hKv-QO9l0igqFzULG_KFdjjel40DkKLBR5G202zVCjoVmgnsCCtWLHLLc8x1Bxv65TcxoTvUgYWHqp5MiIR-AGC6tXrZboVLDW6O8ht8/r6bytqaen5em0xc/Adobe.Photoshop.2020.v21.1.2.136.exe"
-    },
-    {
-      "choice": "5.3",
-      "link": "https://download854.mediafire.com/jxg3t1k1mq4gnPa0rFGW6x5Zdq60F7eu39C64rzleptEqVkhMsC7F4jLdg-KpWLjjq_wupgirFnTyZchkoM-_umV3gpIl8uTu-522WAIasvSqvOLv0wM78T5yGL3NN6g2NUalT4zmA8fPvT7Q_VUQDaEvGHA0-jIPVWfGdIXYxk/uzte0qo3zhw52sy/Adobe+Premiere+Pro+2022+v22.1.2.1+%28x64%29+Multilingual.7z"
-    },
-    {
-      "choice": "6.4",
-      "link": "https://github.com/ncks199/a/releases/download/app/ChromeSetup.exe"
-    },
-    {
-      "choice": "6.5",
-      "link": "https://download1474.mediafire.com/w5l9in69whvgD_eLhy12PkdSMeYxXwQRHzsZJVnRdD8wT1R0xoKu4LB45mprGFO2uwjOZbwQEEllHBoqsDnD1lZMDq8aTUHmPZKSlnLl-2vx-yrqWViXN86Y9__UOBbVUDE843Ehi6TeiczYq3Lxf-xDOPs5SbqUW8CjrBt7S2Y/646fsncas14509z/Firefox+Installer.exe"
-    },
-    {
-      "choice": "6.3",
-      "link": "https://download1512.mediafire.com/wsqla6p5a6rgZwLQ92lwRxEd4c9pOYFlNWszwpfQozxIreP4D9l0p_bDSlRIHlaU2rRKMF5qGiB0NqtBnJOxu3ReD-keMyDDBanq38fAaE_oZ-srkamHHQTisIcNR3V2eC-nh6kBXNenj_hdD92fmjImF06ICWRmyuKSA9FZSxM/fblt6ge0gz9p81h/Microsoft.WindowsTerminal_1.17.11461.0_8wekyb3d8bbwe.msixbundle"
-    },
-    {
-      "choice": "6.2",
-      "link": "https://github.com/ncks199/a/releases/download/app/ShareX-15.0.0-setup.exe"
+      "choice": "1.4",
+      "link": "https://nodejs.org/en",
+      "type": "link"
     }
   ]
 }

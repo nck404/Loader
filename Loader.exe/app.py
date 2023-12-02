@@ -3,7 +3,7 @@ try:
     import requests,colorama
     from pystyle import  Center, Anime, Colors, Colorate, Write 
 except:
-    os.system("pip install requests && pip install pystyle && pip install colorama")
+    os.system("pip install requests && pip install pystyle && pip install colorama && pip install psutil")
 import requests,colorama
 from pystyle import  Center, Anime, Colors, Colorate, Write 
 # import time,os,sys,ctypes,webbrowser,shutil
