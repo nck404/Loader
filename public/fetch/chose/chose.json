@@ -30,6 +30,11 @@
         "choice": "1.9",
         "link": "https://cheatcl-file.web.app/fetch/dev/dev.json",
         "text": "https://cheatcl-file.web.app/fetch/dev/dev.txt"
+      },
+      {
+        "choice": "2.3",
+        "link": "https://cheatcl-file.web.app/fetch/dev/dev.json",
+        "text": "https://cheatcl-file.web.app/fetch/dev/changlog.txt"
       }
     ]
   }

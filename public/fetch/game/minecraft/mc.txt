@@ -8,15 +8,42 @@
     1.Optimize
   -----------------------------------------------------------------------------------------   
     [1.1] - FPS patcher    
-    [1.2] - 1x block overlay
+    [1.2] - 1x block overlay  
     [1.3] - AIO Optimize
 
     2.Legit
   -----------------------------------------------------------------------------------------   
-    [2.1] - ColorPicker             | [2.5] - active window  + office
-    [2.2] - Youtube downloader      | [2.6] - 7zip
-    [2.3] - clumsy - pingchanger    | [2.7] - winRar
-    [2.4] - TimerResolution         |
-    
+    [2.1] - lunar client
+    [2.2] - badlion client
+    [2.3] - ezping + clumsy
 
+    3.other
+  -----------------------------------------------------------------------------------------   
+    [3.1] - 1.5.2 client                | 
+    [3.2] - jdk + jre                   |
+    [3.3] - intent.store archive        |
+
+    4.ghost
+  -----------------------------------------------------------------------------------------   
+  
+    # raven
+    --------------------
+    [4.1.1] - raven b++           | [4.1.4] - raven b4         |  [4.1.7] - raven b++ rb
+    [4.1.2] - raven b1,b2,b3      | [4.1.5] - raven s1,s+,s++  |  [4.1.8] - raven b-
+    [4.1.3] - raven b+++          | [4.1.6] - ravenX           |  [4.1.9] - raven n+
+  
+    # inject
+    ---------------------
+    [4.2.1] - slinky              
+    [4.2.2] - dream               
+    [4.2.3] - dope v1+v2          
+
+    6.recommend
+  -----------------------------------------------------------------------------------------   
+    [6.1] - air  : 0 0 grim velocity , grim regen , polar sprint scaffold 
+    [6.2] - vapev4  
+    [6.3] - minusbounce 
+    [6.4] - rise 6
+                
     
+  

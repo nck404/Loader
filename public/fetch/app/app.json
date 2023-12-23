@@ -2,8 +2,9 @@
   "data": [
     {
       "choice": "1.1",
-      "link": "https://github.com/ncks199/a/releases/download/app/Optimizer-16.1.exe",
-      "type": "download"
+      "link": "https://www.mediafire.com/file/zb9ju8kc8tlzhc0/air.zip/file",
+      "name": "air.zip",
+      "type": "mdlink"
     },
     {
       "choice": "1.2",
