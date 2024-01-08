@@ -1,19 +1,16 @@
 import time,os,sys,ctypes,webbrowser,shutil
 try:
-    import requests,colorama
+    import time,os,sys,ctypes,webbrowser,shutil,mediafire_dl,requests,colorama
     from pystyle import  Center, Anime, Colors, Colorate, Write 
-    import mediafire_dl
     from colorama import init, Fore, Back, Style
+    from datetime import datetime
 except:
     os.system("pip install requests && pip install pystyle && pip install colorama && pip install psutil && pip install git+https://github.com/nck404/pymediafire ")
-import requests,colorama
-import mediafire_dl
+import time,os,sys,ctypes,webbrowser,shutil,mediafire_dl,requests,colorama
 from pystyle import  Center, Anime, Colors, Colorate, Write 
 from colorama import init, Fore, Back, Style
-
-# import time,os,sys,ctypes,webbrowser,shutil
-# import requests,colorama
-# from pystyle import  Center, Anime, Colors, Colorate, Write 
+from datetime import datetime
+from pypresence import Presence
 def setTitle(title):
     if os.name == 'nt':
         ctypes.windll.kernel32.SetConsoleTitleW(title)
@@ -39,6 +36,9 @@ def method():
 def rgb(r, g, b):
     return f"\x1b[38;2;{r};{g};{b}m"
 
+
+
+# Thực hiện một số thay đổi trong thời gian chạy
 
 def download(link): 
     Write.Print(f'     ~/> Download ~ {link} \n',Colors.blue_to_white ,interval=0.002)
@@ -144,29 +144,93 @@ def download_file(url, save_path, show_progress=True):
 # chose
 chosetext = "https://cheatcl-file.web.app/fetch/chose/chose.txt"
 chosejson = "https://cheatcl-file.web.app/fetch/chose/chose.json"
+clf = "https://cheatcl-file.web.app/fetch/cheatcl/changlog.txt"
+newsf = "https://cheatcl-file.web.app/fetch/cheatcl/news.txt"
 def enenror():
     Write.Print("   [e] NOT FOUND | wait 4s coninue", Colors.blue_to_white, interval=0.000)
     time.sleep(1.5)
     chose() 
 
-def fprint(text):
+colorspack = {
+    "1": {
+        "name":"catpuccin",
+        "alpha": rgb(178, 186, 216),
+        "digit": rgb(169, 137, 209),
+        "bracket": rgb(88, 176, 194),
+        "hyphen": rgb(40, 40, 40),
+        "hash": rgb(241, 144, 130),
+        "pipe": rgb(109, 151, 211),
+        "other": Fore.WHITE,
+    },
+    "2": {
+        "name":"rosepinegold",
+        "alpha": rgb(250, 244, 237),
+        "digit": rgb(49, 116, 143),
+        "bracket": rgb(246, 193, 119),
+        "hyphen": rgb(40, 40, 40),
+        "hash": rgb(235, 111, 146),
+        "pipe": rgb(109, 151, 211),
+        "other": Fore.RED,
+    },
+    "3": {
+        "name":"rosepineiris",
+        "alpha": rgb(226, 228, 253),
+        "digit": rgb(134, 173, 180),
+        "bracket": rgb(54, 55, 85),
+        "hyphen": rgb(40, 40, 40),
+        "hash": rgb(235, 111, 146),
+        "pipe": rgb(109, 151, 211),
+        "other": rgb(131,132,150),
+    }
+}
+
+def fprint(text, theme=None):
+    default_colors = {
+        "alpha": rgb(242, 233, 222),
+        "digit": rgb(169, 137, 209),
+        "bracket": rgb(88, 176, 194),
+        "hyphen": rgb(40, 40, 40),
+        "hash": rgb(241, 144, 130),
+        "pipe": rgb(109, 151, 211),
+        "other": Fore.WHITE,
+    }
+
+    colors = default_colors.copy()
+
+    if theme and theme in colorspack:
+        colors.update(colorspack[theme])
+
     for char in text:
+        color_key = "other"
         if char.isalpha():
-            print( rgb(178, 186, 216) + char, end='')
+            color_key = "alpha"
         elif char.isdigit():
-            print( rgb(169, 137, 209) + char, end='')
-        elif (char == "[") or (char == "]"): 
-            print( rgb(88, 176, 194) + char, end='')
-        elif (char == "#") : 
-            print( rgb(241, 144, 130) + char, end='')
-        else:
-            print(Fore.WHITE + char, end='')
+            color_key = "digit"
+        elif char in ["[", "]"]:
+            color_key = "bracket"
+        elif char == "-":
+            color_key = "hyphen"
+        elif char == "#":
+            color_key = "hash"
+        elif char == "|":
+            color_key = "pipe"
+
+        print(colors[color_key] + char, end='')
+
+    print(Style.RESET_ALL, end='')
+
+
+
+
 def chose():
+
     setTitle(f"NCK Launcher")
     init(autoreset=True)
     clear = lambda: os.system('cls')
+    user = "nck" 
+    oss = "win10"
     clear()
-    Write.Print(f"""
+    fprint(f"""
 
             ╔══════════════════════════════════════════════════════════╗
             ║    ___ _                                                 ║     
@@ -176,39 +240,112 @@ def chose():
             ║ \____/|_| |_|\___|\__,_|\__\____/\____/  cheatcl.web.app ║
             ╚══════════════════════════════════════════════════════════╝
                 
-    """,Colors.blue_to_white, interval=0)
+    """,selected_theme)
     try:
         response = requests.get(chosetext)
         if response.status_code == 200:
-            fprint(response.text)
+            fprint(response.text,selected_theme)
         else:
             print(f"    [e] falled: {response.status_code}")
     except requests.exceptions.RequestException as e:
         print(f"    [e] falled: {e}")
-    print()
-    choice = Write.Input(f'     ~/> ',Colors.blue_to_white ,interval=0.000)
-    link, text_link = fs(chosejson, choice)
+    print(f"""      
+        {rgb(145, 192, 135)}[cl] {rgb(178, 186, 216)}- changelog
+        {rgb(145, 192, 135)}[nw] {rgb(178, 186, 216)}- news
+        {rgb(145, 192, 135)}[info] {rgb(178, 186, 216)}- info           
+    """)
+    current_time = datetime.now()
+    choice = Write.Input(f'''
+        ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | #
+        ╰─ ~  ''',Colors.blue_to_white ,interval=0.000)
+    if choice == "cl":
+        cls()
+        try:
+            response = requests.get(clf)
+            if response.status_code == 200:
+                fprint(response.text,selected_theme)
+            else:
+                print(f"    [e] falled: {response.status_code}")
+        except requests.exceptions.RequestException as e:
+            print(f"    [e] falled: {e}")
+        while choice != "0" :
+            choice = Write.Input(f'''
+        ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | #
+        ╰─ ~  ''',Colors.blue_to_white ,interval=0.000)
+        chose()
+    if choice == "nw":
+        cls()
+        try:
+            response = requests.get(newsf)
+            if response.status_code == 200:
+                fprint(response.text,selected_theme)
+            else:
+                print(f"    [e] falled: {response.status_code}")
+        except requests.exceptions.RequestException as e:
+            print(f"    [e] falled: {e}")
+        while choice != "0" :
+            choice = Write.Input(f'''
+        ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | #
+        ╰─ ~  ''',Colors.blue_to_white ,interval=0.000)
+        chose()
+    elif choice =="0":
+        chose()
+    elif choice == "info":
+        cls()
+        fprint("""
+            ╔══════════════════════════════════════════════════════════╗
+            ║    ___ _                                                 ║     
+            ║   / __\ |__   ___  __ _| |_  / __\ / /                   ║ 
+            ║  / /  | '_ \ / _ \/ _` | __|/ /   / /    yt/@necakco     ║ 
+            ║ / /___| | | |  __/ (_| | |_/ /___/ /___  dsc.gg/cheatcl  ║
+            ║ \____/|_| |_|\___|\__,_|\__\____/\____/  cheatcl.web.app ║
+            ╚══════════════════════════════════════════════════════════╝
 
-    if (choice == "0") :
-         cls()
-         chose()
-    elif link and text_link:
+        [+] website : chaetcl.web.app
+        [+] youtube : necakco
+        [+] discord : dsc.gg/cheatcl
+        [+] dev : necakco (website + loader)
+        [+] visual : frd,necakco
+            
+        Providing cheats,service, etc since May 1st, 2019.
+        Back in service since June 1st, 2023!
+                ---------------------------------------------------
+        CheatCL will not be responsible for any risks in your device 
+        if you use the things we found.
+               
+        0 - to go back
+
+           """,selected_theme)
+        while choice != "0" :
+            choice = Write.Input(f' ~/> ',Colors.blue_to_white ,interval=0.000)
+        chose()
+    
+    link, text_link = fs(chosejson, choice)
+    if link and text_link:
         cls()
         print(f" {rgb(145, 192, 135)}Page {choice} - {rgb(178, 186, 216)} 0 to go back")
         text = requests.get(text_link).text
-        fprint(text)
-        choice = Write.Input(f' ~/> ',Colors.blue_to_white ,interval=0.000)
-        if (choice == "0") :
-         cls()
-         chose()
+        fprint(text, selected_theme)
+        
+        choice = Write.Input(f'''
+    ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | #
+    ╰─ ~  ''',Colors.blue_to_white ,interval=0.000)
+        
+        if choice == "0":
+            cls()
+            chose()
         else:
             method()
-            dmt = Write.Input(f'     ~/> ',Colors.blue_to_white ,interval=0.000)
-            fetch_link_from_json(link,choice,dmt)
-                                
+            dmt = Write.Input(f'''
+    ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | #
+    ╰─ ~  ''',Colors.blue_to_white ,interval=0.000)
+            fetch_link_from_json(link, choice, dmt)
     else:
         cls()
-        enenror()
+        chose()
+    
+
+            
 
 
 
@@ -221,5 +358,75 @@ banner = r"""
                                         ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝ ╚═════╝         
                                                   Press ENTER to open.                                                                                      
 """[0:]
-Anime.Fade(Center.Center(banner), Colors.black_to_white, Colorate.Vertical, enter=True)
-chose()
+Write.Print(f"""
+
+            ╔══════════════════════════════════════════════════════════╗
+            ║    ___ _                                                 ║     
+            ║   / __\ |__   ___  __ _| |_  / __\ / /                   ║ 
+            ║  / /  | '_ \ / _ \/ _` | __|/ /   / /    yt/@necakco     ║ 
+            ║ / /___| | | |  __/ (_| | |_/ /___/ /___  dsc.gg/cheatcl  ║
+            ║ \____/|_| |_|\___|\__,_|\__\____/\____/  cheatcl.web.app ║
+            ╚══════════════════════════════════════════════════════════╝
+
+    """,Colors.blue_to_white, interval=0)
+print(f"""
+        {rgb(178, 186, 216)} chose your theme
+        
+        {rgb(145, 192, 135)}[1] {rgb(178, 186, 216)}- catpuccin (default)          
+        {rgb(145, 192, 135)}[2] {rgb(178, 186, 216)}- rose pine (gold)
+        {rgb(145, 192, 135)}[3] {rgb(178, 186, 216)}- rose pine (iris)
+    """)
+current_time = datetime.now()
+selected_theme = Write.Input(f'''
+        ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | #
+        ╰─ ~  ''',Colors.blue_to_white ,interval=0.000)
+if selected_theme in colorspack:
+    Anime.Fade(Center.Center(banner), Colors.black_to_white, Colorate.Vertical, enter=True)
+    def connect_with_retry():
+        cls()
+        max_retries = 2
+        retry_count = 0
+        start_time = time.time()
+        print('''
+        [+] Discord RPC setup   
+        ''')
+        time.sleep(0.1)
+        while retry_count < max_retries:
+            try:
+                RPC = Presence("1193756572791361608")
+                RPC.connect()
+                return RPC
+            except Exception as e:
+                print(f"    [-] Error: {e}")
+                print("    [e] Retrying in 2 seconds...")
+                time.sleep(2)
+                retry_count += 1
+
+                # Kiểm tra thời gian đã trôi qua từ lúc bắt đầu kết nối
+                elapsed_time = time.time() - start_time
+                if elapsed_time > 2:  # Đặt giới hạn thời gian là 10 giây
+                    print("    [!] Connection timeout. Skipping connection.")
+                    return None
+
+        print("Could not connect to Discord even after retries.")
+        cls()
+        return None
+
+    RPC = connect_with_retry()
+
+    if RPC:
+        RPC.update(
+            state="Playing CheatCL Loader",
+            details="The best Archive for software, cheat,.. | CheatCl",
+            start=int(time.time()),
+            buttons=[
+                {"label": "Visit website", "url": "https://cheatcl.web.app"},
+            ]
+        )
+    else:
+        print("Cannot proceed without connecting to Discord.")
+    chose()
+ 
+else:
+    print(f" {rgb(169, 137, 209)}      Invalid theme selected.")
+    time.sleep(1.7)

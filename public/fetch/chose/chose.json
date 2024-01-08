@@ -2,10 +2,10 @@
     "data": [
       {
         "choice": "1.1",
-        "link": "https://cheatcl-file.web.app/fetch/app/app.json",
-        "text": "https://cheatcl-file.web.app/fetch/app/app.txt"
+        "link": "https://cheatcl-file.web.app/fetch/game/app/app.json",
+        "text": "https://cheatcl-file.web.app/fetch/game/app/app.txt"
       },
- 
+      
       {
         "choice": "1.2",
         "link": "https://cheatcl-file.web.app/fetch/game/csgo/csgo.json",
@@ -22,7 +22,7 @@
         "text": "https://cheatcl-file.web.app/fetch/game/web.txt"
       },
       {
-        "choice": "1.8",
+        "choice": "2.2",
         "link": "https://cheatcl-file.web.app/fetch/game/minecraft/mc.json",
         "text": "https://cheatcl-file.web.app/fetch/game/minecraft/mc.txt"
       },

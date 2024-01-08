@@ -19,9 +19,16 @@
 
     3.other
   -----------------------------------------------------------------------------------------   
-    [3.1] - 1.5.2 client                | 
-    [3.2] - jdk + jre                   |
+    # tool, reup archive
+    [3.1] - 1.5.2 client                | [3.4] - recaf
+    [3.2] - jdk + jre                   | [3.5] - all Jar File Decompiler/editor
     [3.3] - intent.store archive        |
+    # launcher
+    [3.1.1] - Hello Launcher
+    [3.1.2] - Legacy Launcher
+    [3.1.3] - Pojavlauncher
+    [3.1.4] - Titan launcher
+    [3.1.5] - Tlauncher
 
     4.ghost
   -----------------------------------------------------------------------------------------   
@@ -31,12 +38,19 @@
     [4.1.1] - raven b++           | [4.1.4] - raven b4         |  [4.1.7] - raven b++ rb
     [4.1.2] - raven b1,b2,b3      | [4.1.5] - raven s1,s+,s++  |  [4.1.8] - raven b-
     [4.1.3] - raven b+++          | [4.1.6] - ravenX           |  [4.1.9] - raven n+
-  
+    [4.3.10] - raven b+ archive
     # inject
     ---------------------
-    [4.2.1] - slinky              
-    [4.2.2] - dream               
-    [4.2.3] - dope v1+v2          
+    [4.2.1] - slinky              | [4.2.4] - noise
+    [4.2.2] - dream               | 
+    [4.2.3] - dope v1+v2          |
+    ---------------------
+    # other forge ghost           
+    [4.3.1] - Sapphire Lite       | [4.3.6] - Uboa             |  [4.3.11] - Merge
+    [4.3.2] - DuelsEssentials     | [4.3.7] - Gucci            |  [4.3.12] - Kriso B1
+    [4.3.3] - Skilled             | [4.3.8] - Explicit B9      |  
+    [4.3.4] - Ghost S             | [4.3.9] - Sumo             |
+    [4.3.5] - Lowkey              | [4.3.10] - Trump           |
 
     6.recommend
   -----------------------------------------------------------------------------------------   

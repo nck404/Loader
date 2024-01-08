@@ -7,7 +7,7 @@ files = ['icon.ico']
 
 # TARGET
 target = Executable(
-    script="main.py",
+    script="Obfuscated_app.py",
     # base="Win32GUI",
     icon="icon.ico"
 )
