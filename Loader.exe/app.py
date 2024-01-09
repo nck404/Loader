@@ -8,6 +8,7 @@ except:
     os.system("pip install requests && pip install pystyle && pip install colorama && pip install psutil && pip install git+https://github.com/nck404/pymediafire ")
 import time,os,sys,ctypes,webbrowser,shutil,mediafire_dl,requests,colorama
 from pystyle import  Center, Anime, Colors, Colorate, Write 
+import fade
 from colorama import init, Fore, Back, Style
 from datetime import datetime
 from pypresence import Presence
@@ -19,6 +20,15 @@ def setTitle(title):
     else:
         pass
 global cls
+
+def set_terminal_transparency(alpha):
+    hwnd = ctypes.windll.kernel32.GetConsoleWindow()
+    styles = ctypes.windll.user32.GetWindowLongA(hwnd, -20)
+    styles = styles | 0x00080000  # WS_EX_LAYERED
+    ctypes.windll.user32.SetWindowLongA(hwnd, -20, styles)
+    ctypes.windll.user32.SetLayeredWindowAttributes(hwnd, 0, int(alpha * 255), 2)
+
+set_terminal_transparency(0.85)
 def cls():
  os.system('cls' if os.name=='nt' else 'clear')
 def tool():
@@ -27,11 +37,9 @@ def clearConsole(): return os.system(
     'cls' if os.name in ('nt', 'dos') else 'clear')
 def method():
      print(f'''
-        {rgb(214, 166, 201)}╔════════════════════════════╗       ╔═══════════════════════════════════╗
-        {rgb(214, 166, 201)}║ {Colorate.Horizontal(Colors.blue_to_cyan, "[1]")}{Fore.RESET} - {Colorate.Horizontal(Colors.white_to_blue, "Mediafire")}            {rgb(214, 166, 201)}║   *   ║ {rgb(178, 186, 216)}If there is any error or issue    {rgb(214, 166, 201)}║     
-        {rgb(214, 166, 201)}║ {Colorate.Horizontal(Colors.blue_to_cyan, "[2]")}{Fore.RESET} - {Colorate.Horizontal(Colors.white_to_blue, "get")}                  {rgb(214, 166, 201)}║   *   ║ {rgb(178, 186, 216)}please contact us through Discord {rgb(214, 166, 201)}║
-        {rgb(214, 166, 201)}║ {Colorate.Horizontal(Colors.blue_to_cyan, "[3]")}{Fore.RESET} - {Colorate.Horizontal(Colors.white_to_blue, "website")}              {rgb(214, 166, 201)}║   *   ║ {rgb(178, 186, 216)}dsc.gg/cheatcl                    {rgb(214, 166, 201)}║   
-        {rgb(214, 166, 201)}╚════════════════════════════╝       ╚═══════════════════════════════════╝
+        {rgb(214, 166, 201)} {Colorate.Horizontal(Colors.blue_to_cyan, "[1]")}{Fore.RESET} - {Colorate.Horizontal(Colors.white_to_blue, "Mediafire")}            {rgb(214, 166, 201)}║   *   ║ {rgb(178, 186, 216)}If there is any error or issue    {rgb(214, 166, 201)}    
+        {rgb(214, 166, 201)} {Colorate.Horizontal(Colors.blue_to_cyan, "[2]")}{Fore.RESET} - {Colorate.Horizontal(Colors.white_to_blue, "get")}                  {rgb(214, 166, 201)}║   *   ║ {rgb(178, 186, 216)}please contact us through Discord {rgb(214, 166, 201)}
+        {rgb(214, 166, 201)} {Colorate.Horizontal(Colors.blue_to_cyan, "[3]")}{Fore.RESET} - {Colorate.Horizontal(Colors.white_to_blue, "website")}              {rgb(214, 166, 201)}║   *   ║ {rgb(178, 186, 216)}dsc.gg/cheatcl                    {rgb(214, 166, 201)}   
         ''')
 def rgb(r, g, b):
     return f"\x1b[38;2;{r};{g};{b}m"
@@ -224,7 +232,7 @@ def fprint(text, theme=None):
 
 def chose():
 
-    setTitle(f"NCK Launcher")
+    setTitle(f"cheatcl.web.app")
     init(autoreset=True)
     clear = lambda: os.system('cls')
     user = "nck" 
@@ -382,50 +390,66 @@ selected_theme = Write.Input(f'''
         ╰─ ~  ''',Colors.blue_to_white ,interval=0.000)
 if selected_theme in colorspack:
     Anime.Fade(Center.Center(banner), Colors.black_to_white, Colorate.Vertical, enter=True)
-    def connect_with_retry():
-        cls()
-        max_retries = 2
-        retry_count = 0
-        start_time = time.time()
-        print('''
-        [+] Discord RPC setup   
-        ''')
-        time.sleep(0.1)
-        while retry_count < max_retries:
-            try:
-                RPC = Presence("1193756572791361608")
-                RPC.connect()
-                return RPC
-            except Exception as e:
-                print(f"    [-] Error: {e}")
-                print("    [e] Retrying in 2 seconds...")
-                time.sleep(2)
-                retry_count += 1
+    text = """
+         ██████╗██╗  ██╗███████╗ █████╗ ████████╗ ██████╗██╗     
+        ██╔════╝██║  ██║██╔════╝██╔══██╗╚══██╔══╝██╔════╝██║     
+        ██║     ███████║█████╗  ███████║   ██║   ██║     ██║     
+        ██║     ██╔══██║██╔══╝  ██╔══██║   ██║   ██║     ██║     
+        ╚██████╗██║  ██║███████╗██║  ██║   ██║   ╚██████╗███████╗
+         ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝╚══════╝                                                     
+"""
+    faded_text = fade.water(text)
+    print(faded_text)
+    sel = Write.Input(f'''
+        ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | # Enable Discord RPC ?
+        ╰─ ~ (yes/no) ?   ''',Colors.white_to_blue ,interval=0.000)
+    if (sel == 'yes'):
+        def connect_with_retry():
+            cls()
+            max_retries = 2
+            retry_count = 0
+            start_time = time.time()
+            print('''
+            [+] Discord RPC setup   
+            ''')
+            time.sleep(0.1)
+            while retry_count < max_retries:
+                try:
+                    RPC = Presence("1193756572791361608")
+                    RPC.connect()
+                    return RPC
+                except Exception as e:
+                    print(f"    [-] Error: {e}")
+                    print("    [e] Retrying in 2 seconds...")
+                    time.sleep(2)
+                    retry_count += 1
 
-                # Kiểm tra thời gian đã trôi qua từ lúc bắt đầu kết nối
-                elapsed_time = time.time() - start_time
-                if elapsed_time > 2:  # Đặt giới hạn thời gian là 10 giây
-                    print("    [!] Connection timeout. Skipping connection.")
-                    return None
+                    # Kiểm tra thời gian đã trôi qua từ lúc bắt đầu kết nối
+                    elapsed_time = time.time() - start_time
+                    if elapsed_time > 2:  # Đặt giới hạn thời gian là 10 giây
+                        print("    [!] Connection timeout. Skipping connection.")
+                        return None
 
-        print("Could not connect to Discord even after retries.")
-        cls()
-        return None
+            print("Could not connect to Discord even after retries.")
+            cls()
+            return None
 
-    RPC = connect_with_retry()
+        RPC = connect_with_retry()
 
-    if RPC:
-        RPC.update(
-            state="Playing CheatCL Loader",
-            details="The best Archive for software, cheat,.. | CheatCl",
-            start=int(time.time()),
-            buttons=[
-                {"label": "Visit website", "url": "https://cheatcl.web.app"},
-            ]
-        )
+        if RPC:
+            RPC.update(
+                state="Playing CheatCL Loader",
+                details="The best Archive for software, cheat,.. | CheatCl",
+                start=int(time.time()),
+                buttons=[
+                    {"label": "Visit website", "url": "https://cheatcl.web.app"},
+                ]
+            )
+        else:
+            print("Cannot proceed without connecting to Discord.")
+        chose()
     else:
-        print("Cannot proceed without connecting to Discord.")
-    chose()
+        chose()
  
 else:
     print(f" {rgb(169, 137, 209)}      Invalid theme selected.")
