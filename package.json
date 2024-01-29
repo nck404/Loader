@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "firebase": "^10.7.0",
-    "firebase-cli": "^1.2.0"
-  }
-}

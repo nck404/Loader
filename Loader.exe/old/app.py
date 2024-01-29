@@ -9,9 +9,208 @@ except:
 import time,os,sys,ctypes,webbrowser,shutil,mediafire_dl,requests,colorama
 from pystyle import  Center, Anime, Colors, Colorate, Write 
 import fade
-from colorama import init, Fore, Back, Style
+from colorama import init, Fore, Style
 from datetime import datetime
 from pypresence import Presence
+
+# function
+def webclonner():
+
+    from bs4 import BeautifulSoup
+  
+
+    import os
+    from pystyle import Write, Colors
+
+    base_dir = os.getcwd()
+
+    Write.Print(f"""
+
+                ╔══════════════════════════════════════════════════════════╗
+                ║    ___ _                                                 ║     
+                ║   / __\ |__   ___  __ _| |_  / __\ / /                   ║ 
+                ║  / /  | '_ \ / _ \/ _` | __|/ /   / /    yt/@necakco     ║ 
+                ║ / /___| | | |  __/ (_| | |_/ /___/ /___  dsc.gg/cheatcl  ║
+                ║ \____/|_| |_|\___|\__,_|\__\____/\____/  cheatcl.web.app ║
+                ╚══════════════════════════════════════════════════════════╝
+                    
+        """, Colors.blue_to_white, interval=0)
+
+    site_name = Write.Input(f'      Link website ~/>    ', Colors.blue_to_white, interval=0.000)
+    project_name = ''
+    if site_name == '0':
+
+        chose()
+    # Set project_path relative to the current working directory
+
+    project_path = os.path.join(base_dir + '/cloned', project_name)
+    os.makedirs(project_path, exist_ok=True)
+
+    visited_links = []
+    error_links = []
+
+
+    def save(bs, element, check):
+        links = bs.find_all(element)
+
+        for l in links:
+            href = l.get("href")
+            if href is not None and href not in visited_links:
+                if check in href:
+                    href = l.get("href")
+                    print("Working with : {}".format(href))
+                    if "//" in href:
+                        path_s = href.split("/")
+                        file_name = ""
+                        for i in range(3, len(path_s)):
+                            file_name = file_name + "/" + path_s[i]
+                    else:
+                        file_name = href
+
+                    l = site_name + file_name
+
+                    try:
+                        r = requests.get(l)
+                    except requests.exceptions.ConnectionError:
+                        error_links.append(l)
+                        continue
+
+                    if r.status_code != 200:
+                        error_links.append(l)
+                        continue
+
+                    os.makedirs(os.path.dirname(project_path + file_name.split("?")[0]), exist_ok=True)
+                    with open(project_path + file_name.split("?")[0], "wb") as f:
+                        f.write(r.text.encode('utf-8'))
+                        f.close()
+
+                    visited_links.append(l)
+
+
+    def save_assets(html_text):
+        bs = BeautifulSoup(html_text, "html.parser")
+        save(bs=bs, element="link", check=".css")
+        save(bs=bs, element="script", check=".js")
+
+        links = bs.find_all("img")
+        for l in links:
+            href = l.get("src")
+            if href is not None and href not in visited_links:
+                print("Working with : {}".format(href))
+                if "//" in href:
+                    path_s = href.split("/")
+                    file_name = ""
+                    for i in range(3, len(path_s)):
+                        file_name = file_name + "/" + path_s[i]
+                else:
+                    file_name = href
+
+                l = site_name + file_name
+
+                try:
+                    r = requests.get(l, stream=True)
+                except requests.exceptions.ConnectionError:
+                    error_links.append(l)
+                    continue
+
+                if r.status_code != 200:
+                    error_links.append(l)
+                    continue
+
+                os.makedirs(os.path.dirname(project_path + file_name.split("?")[0]), exist_ok=True)
+                with open(project_path + file_name.split("?")[0], "wb") as f:
+                    shutil.copyfileobj(r.raw, f)
+
+                visited_links.append(l)
+
+        # Check and save files with ".jar", ".exe", and ".zip" extensions
+        specific_file_extensions = [".jar", ".exe", ".zip"]
+        specific_file_links = bs.find_all("a", href=lambda x: (x and x.endswith(tuple(specific_file_extensions))))
+        
+        for specific_file_link in specific_file_links:
+            href = specific_file_link.get("href")
+            if href is not None and href not in visited_links:
+                print("Working with : {}".format(href))
+                if "//" in href:
+                    path_s = href.split("/")
+                    file_name = ""
+                    for i in range(3, len(path_s)):
+                        file_name = file_name + "/" + path_s[i]
+                else:
+                    file_name = href
+
+                l = site_name + file_name
+
+                try:
+                    r = requests.get(l, stream=True)
+                except requests.exceptions.ConnectionError:
+                    error_links.append(l)
+                    continue
+
+                if r.status_code != 200:
+                    error_links.append(l)
+                    continue
+
+                os.makedirs(os.path.dirname(project_path + file_name.split("?")[0]), exist_ok=True)
+                with open(project_path + file_name.split("?")[0], "wb") as f:
+                    shutil.copyfileobj(r.raw, f)
+
+                visited_links.append(l)
+
+
+    def crawl(link):
+        if "http://" not in link and "https://" not in link:
+            link = site_name + link
+
+        if site_name in link and link not in visited_links:
+            fprint(f"              [i] - Working with : {link}",selected_theme)
+
+            path_s = link.split("/")
+            file_name = ""
+            for i in range(3, len(path_s)):
+                file_name = file_name + "/" + path_s[i]
+
+            if file_name[len(file_name) - 1] != "/":
+                file_name = file_name + "/"
+
+            try:
+                r = requests.get(link)
+            except requests.exceptions.ConnectionError:
+                fprint("              [e] - Connection Error",selected_theme)
+                sys.exit(1)
+
+            if r.status_code != 200:
+                fprint("              [e] - Invalid Response",selected_theme)
+                sys.exit(1)
+            print(project_path + file_name + "index.html")
+            os.makedirs(os.path.dirname(project_path + file_name.split("?")[0]), exist_ok=True)
+            with open(project_path + file_name.split("?")[0] + "index.html", "wb") as f:
+                text = r.text.replace(site_name, project_name)
+                f.write(text.encode('utf-8'))
+                f.close()
+
+            visited_links.append(link)
+
+            save_assets(r.text)
+
+            soup = BeautifulSoup(r.text, "html.parser")
+
+            for link in soup.find_all('a'):
+                try:
+                    crawl(link.get("href"))
+                except:
+                    error_links.append(link.get("href"))
+
+
+    crawl(site_name + "/")
+    fprint("              [i] - Link crawled log\n",selected_theme)
+    for link in visited_links:
+        print("              [>] - ---- {}\n".format(link))
+
+    fprint("              [a] - Link error log\n",selected_theme)
+    for link in error_links:
+        print("              [>] - ---- {}\n".format(link))
+
 def setTitle(title):
     if os.name == 'nt':
         ctypes.windll.kernel32.SetConsoleTitleW(title)
@@ -19,8 +218,13 @@ def setTitle(title):
         sys.stdout.write(title)
     else:
         pass
+def titlea():
+    setTitle(f"[--cheatclloader--] cheatcl.web.app - Made by frenda w/love")
+    time.sleep(1.2)
+    setTitle(f"[--cheatclloader--] - nck on top - cheatcl.web.app")
 global cls
-
+def alert(type):
+    pass
 def set_terminal_transparency(alpha):
     hwnd = ctypes.windll.kernel32.GetConsoleWindow()
     styles = ctypes.windll.user32.GetWindowLongA(hwnd, -20)
@@ -37,16 +241,16 @@ def clearConsole(): return os.system(
     'cls' if os.name in ('nt', 'dos') else 'clear')
 def method():
      print(f'''
-        {rgb(214, 166, 201)} {Colorate.Horizontal(Colors.blue_to_cyan, "[1]")}{Fore.RESET} - {Colorate.Horizontal(Colors.white_to_blue, "Mediafire")}            {rgb(214, 166, 201)}║   *   ║ {rgb(178, 186, 216)}If there is any error or issue    {rgb(214, 166, 201)}    
-        {rgb(214, 166, 201)} {Colorate.Horizontal(Colors.blue_to_cyan, "[2]")}{Fore.RESET} - {Colorate.Horizontal(Colors.white_to_blue, "get")}                  {rgb(214, 166, 201)}║   *   ║ {rgb(178, 186, 216)}please contact us through Discord {rgb(214, 166, 201)}
-        {rgb(214, 166, 201)} {Colorate.Horizontal(Colors.blue_to_cyan, "[3]")}{Fore.RESET} - {Colorate.Horizontal(Colors.white_to_blue, "website")}              {rgb(214, 166, 201)}║   *   ║ {rgb(178, 186, 216)}dsc.gg/cheatcl                    {rgb(214, 166, 201)}   
+        {rgb(214, 166, 201)} {Colorate.Horizontal(Colors.blue_to_cyan, "[1]")}{Fore.RESET} - {Colorate.Horizontal(Colors.white_to_blue, "Mediafire")}            {rgb(214, 166, 201)}   *    {rgb(178, 186, 216)}If there is any error or issue    {rgb(214, 166, 201)}    
+        {rgb(214, 166, 201)} {Colorate.Horizontal(Colors.blue_to_cyan, "[2]")}{Fore.RESET} - {Colorate.Horizontal(Colors.white_to_blue, "get")}                  {rgb(214, 166, 201)}   *    {rgb(178, 186, 216)}please contact us through Discord {rgb(214, 166, 201)}
+        {rgb(214, 166, 201)} {Colorate.Horizontal(Colors.blue_to_cyan, "[3]")}{Fore.RESET} - {Colorate.Horizontal(Colors.white_to_blue, "website")}              {rgb(214, 166, 201)}   *    {rgb(178, 186, 216)}dsc.gg/cheatcl                    {rgb(214, 166, 201)}   
         ''')
 def rgb(r, g, b):
     return f"\x1b[38;2;{r};{g};{b}m"
-
-
-
-# Thực hiện một số thay đổi trong thời gian chạy
+def backchose(textlink):
+    cls()
+    text = requests.get(textlink).text
+    fprint(text,selected_theme)
 
 def download(link): 
     Write.Print(f'     ~/> Download ~ {link} \n',Colors.blue_to_white ,interval=0.002)
@@ -59,57 +263,81 @@ def open_link(link):
         webbrowser.open(link)
     except Exception as e:
         print(f"An error occurred: {str(e)}")
-
-
-def fetch_link_from_json(json_url, choice, dmt):
+def loadingpage(choice):
+    print(f"  {rgb(175, 143, 217)} [i] loading page")
+    time.sleep(0.5)
+    cls()
+    print(f" {rgb(145, 192, 135)}Page {choice} - {rgb(178, 186, 216)} 0 to go back")
+def page(plink):
+    text = requests.get(plink).text
+    fprint(text,selected_theme)
+def chosetod():
+    choice = Write.Input(f'''
+    ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | # 
+    ╰─ ~  ''',Colors.blue_to_white ,interval=0.000)
+    return choice
+def dtool(entry):
+    method()
+    dmt = chosetod()
+    if dmt == "3":
+        if entry["website"] == "none":
+            print(f"  {rgb(175, 143, 217)} [i] the link is not available to you")
+            time.sleep(2.5)
+        else:
+            webbrowser.open(entry["website"])
+            time.sleep(2.5)
+    elif dmt == "2":
+        if entry["wget"] == "none":
+            print(f"  {rgb(175, 143, 217)} [i] the link is not available to you")
+            time.sleep(2.5)
+        else:
+            download(entry["wget"])
+            print(f"  {rgb(175, 143, 217)} [i] ok")
+            time.sleep(2.5)            
+    elif dmt == "1":
+        if entry["mediafire"] == "none":
+            print(f"  {rgb(175, 143, 217)} [i] the link is not available to you")
+        else:
+            mediafire_dl.download(entry["mediafire"], entry["name"], quiet=False)
+            download_folder = os.path.expanduser("~" + os.sep + "Downloads")
+            downloaded_file_path = os.path.join(download_folder, entry["name"])
+            shutil.move(entry["name"], downloaded_file_path)
+            Write.Print(f"  [i] Moved the file to Downloads folder: {downloaded_file_path}", Colors.blue_to_white, interval=0.000)
+            webbrowser.open("file://" + download_folder)
+    time.sleep(2.5)
+def fetch_link_from_json(json_url, choice):
     try:
         response = requests.get(json_url)
         if response.status_code == 200:
             data = response.json()
             print(f"  {rgb(175, 143, 217)} [i] requests : 200")
             for entry in data["data"]:
-                # print(f"Processing entry: {entry}")
                 if (entry["choice"] == choice):
-                    if dmt == "3":
-                        if entry["website"] == "none":
-                            print(f"  {rgb(175, 143, 217)} [i] the link is not available to you")
+                    if entry["page"] == "true":
+                        loadingpage(choice)
+                        page(entry["ptext"])
+                        choice = chosetod()
+                        if choice == "0":
+                            cls()
+                            chose()
                         else:
-                            webbrowser.open(entry["website"])
-                        time.sleep(2.5)
-                        cls()
-                        chose()
-                    elif dmt == "2":
-                        if entry["wget"] == "none":
-                            print(f"  {rgb(175, 143, 217)} [i] the link is not available to you")
+                            fetch_link_from_json(entry["plink"],choice)
+                    else:     
+                        print(f"  {rgb(175, 143, 217)} [i] single : true")
+                        if choice == "0":
+                            cls()
+                            chose()
                         else:
-                            download(entry["wget"])
-                            print(f"  {rgb(175, 143, 217)} [i] ok")
-                            time.sleep(2.5)
-
-                        time.sleep(2.5)
-                        cls()
-                        chose()
-                    elif dmt == "1":
-                        if entry["mediafire"] == "none":
-                            print(f"  {rgb(175, 143, 217)} [i] the link is not available to you")
-                        else:
-                            mediafire_dl.download(entry["mediafire"], entry["name"], quiet=False)
-                            download_folder = os.path.expanduser("~" + os.sep + "Downloads")
-                            downloaded_file_path = os.path.join(download_folder, entry["name"])
-                            shutil.move(entry["name"], downloaded_file_path)
-                            Write.Print(f"  [i] Moved the file to Downloads folder: {downloaded_file_path}", Colors.blue_to_white, interval=0.000)
-                            webbrowser.open("file://" + download_folder)
-                    time.sleep(2.5)
-                    cls()
-                    chose()
-            return enenror()
-
+                            dtool(entry)
+                            break
+                    loadingpage(page)
+                else:
+                    enenror()
         else:
             return f"    [e] Failed to fetch JSON from URL, Status Code: {response.status_code}"
     except requests.exceptions.RequestException as e:
         return f"Error during request: {e}"
 
-# ... (other code)
 
     
 def fs(json_url, choice):
@@ -232,7 +460,7 @@ def fprint(text, theme=None):
 
 def chose():
 
-    setTitle(f"cheatcl.web.app")
+    titlea()
     init(autoreset=True)
     clear = lambda: os.system('cls')
     user = "nck" 
@@ -260,12 +488,21 @@ def chose():
     print(f"""      
         {rgb(145, 192, 135)}[cl] {rgb(178, 186, 216)}- changelog
         {rgb(145, 192, 135)}[nw] {rgb(178, 186, 216)}- news
-        {rgb(145, 192, 135)}[info] {rgb(178, 186, 216)}- info           
-    """)
+        {rgb(145, 192, 135)}[info] {rgb(178, 186, 216)}- info
+
+        {rgb(207,131,153)} # - function""")
+    fprint(f"""        [f1] - web clonner
+        [f2] - mediafire downloader
+        [f3] - workupload downloader  
+        [f4] - auto clicker  
+    """,selected_theme)
+    print(f"    {rgb(207,131,153)} # - link")
+    fprint(f"""        [l1] - nck's media
+        [l2] - discord 
+        [l3] - website 
+    """,selected_theme)
     current_time = datetime.now()
-    choice = Write.Input(f'''
-        ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | #
-        ╰─ ~  ''',Colors.blue_to_white ,interval=0.000)
+    choice = chosetod()
     if choice == "cl":
         cls()
         try:
@@ -298,6 +535,12 @@ def chose():
         chose()
     elif choice =="0":
         chose()
+    elif choice =="f1":
+        cls()
+        fprint("              [0] - exit ",selected_theme)
+        webclonner()
+        time.sleep(1.6)
+        chose()
     elif choice == "info":
         cls()
         fprint("""
@@ -328,26 +571,24 @@ def chose():
             choice = Write.Input(f' ~/> ',Colors.blue_to_white ,interval=0.000)
         chose()
     
+
+    global link,text_link
     link, text_link = fs(chosejson, choice)
     if link and text_link:
+        global text
         cls()
         print(f" {rgb(145, 192, 135)}Page {choice} - {rgb(178, 186, 216)} 0 to go back")
         text = requests.get(text_link).text
         fprint(text, selected_theme)
-        
         choice = Write.Input(f'''
-    ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | #
+    ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | # {choice}
     ╰─ ~  ''',Colors.blue_to_white ,interval=0.000)
         
         if choice == "0":
             cls()
             chose()
         else:
-            method()
-            dmt = Write.Input(f'''
-    ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | #
-    ╰─ ~  ''',Colors.blue_to_white ,interval=0.000)
-            fetch_link_from_json(link, choice, dmt)
+            fetch_link_from_json(link, choice)
     else:
         cls()
         chose()
@@ -454,3 +695,6 @@ if selected_theme in colorspack:
 else:
     print(f" {rgb(169, 137, 209)}      Invalid theme selected.")
     time.sleep(1.7)
+
+
+
