@@ -8,7 +8,7 @@ from pypresence import Presence
 from bs4 import BeautifulSoup
 global fprint,selected_theme,tool,colorspack,chosetext,clearConsole,chosetext,chosejson,choice,current_time,fs,fetch_link_from_json,chose
 global blink
-from os import system
+
 # --------------------------------------------------------
 #                 _                 
 #   ___ _   _ ___| |_ ___ _ __ ___  
@@ -36,11 +36,11 @@ def alert(type):
     elif type == "done":
         Write.Print("   [+] Successful | wait 4s coninue", Colors.green_to_white, interval=0.000)
         time.sleep(1.5)
-        cls()
+        chose() 
     elif type == "info":
         Write.Print("   [i] ---------  | wait 4s coninue", Colors.green_to_white, interval=0.000)
         time.sleep(1.5)
-        cls()
+        chose() 
 def alert2(type,text):
     if type == "error": 
         Write.Print(f"   [e] NOT FOUND | {text} | wait 4s coninue", Colors.red_to_white, interval=0.000)
@@ -49,12 +49,11 @@ def alert2(type,text):
     elif type == "done":
         Write.Print(f"   [+] Successful | {text} | wait 4s coninue", Colors.green_to_white, interval=0.000)
         time.sleep(1.5)
-        cls()
+        chose() 
     elif type == "info":
         Write.Print(f"   [i] ---------  | {text} | wait 4s coninue", Colors.green_to_white, interval=0.000)
         time.sleep(1.5)
-        cls()
-   
+        chose() 
 # --------------------------------------------------------
 #   _   _                         
 #  | | | |                        
@@ -64,18 +63,11 @@ def alert2(type,text):
 #   \__|_| |_|\___|_| |_| |_|\___|
 #                                 
 #      print(f"{hex('#6F7CBE')} abc")               
-global finput,blue,cyan_gradient,red_to_black,purple_to_black ,finput2       
+global finput                
 def finput():
-    choice = input(cyan_gradient(f'''
+    choice = Write.Input(f'''
     ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | # 
-    ╰─ ~  '''))
-
-    return choice
-def finput2(page):
-    choice = input(cyan_gradient(f'''
-    ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | # {page}
-    ╰─ ~  '''))
-
+    ╰─ ~  ''',Colors.blue_to_white ,interval=0.000)
     return choice
 colorspack = {
     "1": {
@@ -144,60 +136,6 @@ def fprint(text, theme=None):
         print(colors[color_key] + char, end='')
 
     print(Style.RESET_ALL, end='')
-def blue(text):
-    system(""); faded = ""
-    for line in text.splitlines():
-        green = 0
-        for character in line:
-            green += 3
-            if green > 255:
-                green = 255
-            faded += (f"\033[38;2;0;{green};255m{character}\033[0m")
-        faded += "\n"
-    return faded
-def red_to_black(text):
-    system(""); faded = ""
-    for line in text.splitlines():
-        intensity = 255
-        for character in line:
-            intensity -= 5
-            if intensity < 0:
-                intensity = 0
-            faded += (f"\033[38;2;{intensity};0;0m{character}\033[0m")
-        faded += "\n"
-    return faded
-
-def purple_to_black(text):
-    system(""); faded = ""
-    for line in text.splitlines():
-        red = 220
-        blue = 255
-        for character in line:
-            faded += (f"\033[38;2;{red};0;{blue}m{character}\033[0m")
-            red = max(35, red - 3)
-            blue = max(0, blue - 3)
-        faded += "\n"
-    return faded
-def cyan_gradient(text):
-    system(""); faded = ""
-    
-    start_color = (140, 255, 244)
-    end_color = (165, 140, 255)
-    
-    r_step = (end_color[0] - start_color[0]) / len(text)
-    g_step = (end_color[1] - start_color[1]) / len(text)
-    b_step = (end_color[2] - start_color[2]) / len(text)
-    
-    current_color = start_color
-    
-    for line in text.splitlines():
-        for character in line:
-            faded += (f"\033[38;2;{int(current_color[0])};{int(current_color[1])};{int(current_color[2])}m{character}\033[0m")
-            current_color = (current_color[0] + r_step, current_color[1] + g_step, current_color[2] + b_step)
-
-        faded += "\n"
-    faded = faded.rstrip('\n')
-    return faded
 # --------------------------------------------------------
 def method():
      print(f'''
@@ -255,14 +193,9 @@ def dtool(entry):
         else:
             mediafire_dl.download(entry["mediafire"], entry["name"], quiet=False)
             download_folder = os.path.expanduser("~" + os.sep + "Downloads")
-
-            downloaded_files = [f for f in os.listdir('.') if os.path.isfile(f)]
-        
-            newest_file = max(downloaded_files, key=os.path.getctime)            
-            downloaded_file_path = os.path.join(download_folder, newest_file)
-            shutil.move(newest_file, downloaded_file_path)
-
-            alert2("done","Moved the file to Downloads folder")
+            downloaded_file_path = os.path.join(download_folder, entry["name"])
+            shutil.move(entry["name"], downloaded_file_path)
+            Write.Print(f"  [i] Moved the file to Downloads folder: {downloaded_file_path}", Colors.blue_to_white, interval=0.000)
             webbrowser.open("file://" + download_folder)
     time.sleep(2.5)
 def fetch_link_from_json(json_url, choice,blink):
@@ -276,7 +209,6 @@ def fetch_link_from_json(json_url, choice,blink):
                     if entry["page"] == "true":
                         cls()
                         print(f"  {rgb(175, 143, 217)} [i] multi : true")
-                        print(f" {rgb(145, 192, 135)}Page {choice} - {rgb(178, 186, 216)} 0 to go back")
                         page(entry["ptext"])
                         choice = finput()
                         if choice == "0":
@@ -292,8 +224,7 @@ def fetch_link_from_json(json_url, choice,blink):
                         else:
                             dtool(entry)
                             break
-            cls()     
-            print(f" {rgb(145, 192, 135)}Page {choice} - {rgb(178, 186, 216)} 0 to go back")            
+
             fprint(text, selected_theme)
             choice = Write.Input(f'''
     ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | # {choice}
@@ -349,10 +280,10 @@ def download_file(url, save_path, show_progress=True):
         Write.Print(f"  [e] An error occurred: {str(e)}",Colors.blue_to_white, interval=0.000)
         alert("error")
 # chose
-chosetext = "https://frenda-r.web.app/fetch/chose/chose.txt"
-chosejson = "https://frenda-r.web.app/fetch/chose/chose.json"
-clf = "https://frenda-r.web.app/fetch/cheatcl/changlog.txt"
-newsf = "https://frenda-r.web.app/fetch/cheatcl/news.txt"
+chosetext = "https://cheatcl-file.web.app/fetch/chose/chose.txt"
+chosejson = "https://cheatcl-file.web.app/fetch/chose/chose.json"
+clf = "https://cheatcl-file.web.app/fetch/cheatcl/changlog.txt"
+newsf = "https://cheatcl-file.web.app/fetch/cheatcl/news.txt"
 
 
 
@@ -378,7 +309,7 @@ def chose():
                 
     """,selected_theme)
 
-    print(cyan_gradient('       Enter the number that matches the one you want to enter.'))
+
     try:
         response = requests.get(chosetext)
         if response.status_code == 200:
@@ -408,7 +339,9 @@ def chose():
         except requests.exceptions.RequestException as e:
             print(f"    [e] falled: {e}")
         while choice != "0" :
-            choice = finput()
+            choice = Write.Input(f'''
+        ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | #
+        ╰─ ~  ''',Colors.blue_to_white ,interval=0.000)
         chose()
     if choice == "nw":
         cls()
@@ -468,7 +401,7 @@ def chose():
             ╚══════════════════════════════════════════════════════════╝
 
         [1] web clonner
-        [2] auto clicker
+
             
                 ---------------------------------------------------
         CheatCL will not be responsible for any risks in your device 
@@ -497,22 +430,6 @@ def chose():
                 alert2("error",se)
             except Exception as ex:
                 alert2("error",ex)
-        elif choice == "2":
-            code_url = "https://frenda-r.web.app/tool/auto.py"
-            try:
-                # msvcrt.getch()
-                response = requests.get(code_url)
-                response.raise_for_status()
-                python_code = response.text
-                cls()
-                exec(python_code)
-
-            except requests.exceptions.RequestException as e:
-                alert2("error",e)
-            except SyntaxError as se:
-                alert2("error",se)
-            except Exception as ex:
-                alert2("error",ex)
         
 
     global link,text_link
@@ -523,7 +440,9 @@ def chose():
         print(f" {rgb(145, 192, 135)}Page {choice} - {rgb(178, 186, 216)} 0 to go back")
         text = requests.get(text_link).text
         fprint(text, selected_theme)
-        choice = finput2(choice)
+        choice = Write.Input(f'''
+    ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | # {choice}
+    ╰─ ~  ''',Colors.blue_to_white ,interval=0.000)
         blink = link
         if choice == "0":
             cls()
@@ -581,24 +500,11 @@ if selected_theme in colorspack:
         ╚██████╗██║  ██║███████╗██║  ██║   ██║   ╚██████╗███████╗
          ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝╚══════╝                                                     
 """
-    print(cyan_gradient(text))
-
+    faded_text = fade.water(text)
+    print(faded_text)
     sel = Write.Input(f'''
         ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | # Enable Discord RPC ?
         ╰─ ~ (yes/no) ?   ''',Colors.white_to_blue ,interval=0.000)
-    print('\n')
-    print(cyan_gradient("     If you like CheatCL, don't forget to subscribe Necakco on youtube ♥ ♥  \n"))
-    sm = Write.Input(f'''
-        ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | # sub2nck or die?
-        ╰─ ~ (yes/no) ?   ''',Colors.white_to_blue ,interval=0.000)
-    if sm == 'yes':
-        webbrowser.open("https://www.youtube.com/channel/UC51P2yIrqRGdun9MtvXNXaA")
-    print(cyan_gradient("     follow necakco on facbook  \n"))
-    sm2 = Write.Input(f'''
-        ╭─ ♥ {current_time.hour}:{current_time.minute} | {current_time.year}/{current_time.month}/{current_time.day} | # follow necakco on facbook
-        ╰─ ~ (yes/no) ?   ''',Colors.white_to_blue ,interval=0.000)
-    if sm2 == 'yes':
-        webbrowser.open("https://www.facebook.com/profile.php?id=100088572223464")
     if (sel == 'yes'):
         def connect_with_retry():
             cls()

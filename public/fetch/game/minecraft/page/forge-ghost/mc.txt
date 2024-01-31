@@ -1,48 +1,53 @@
-
-       ___ _                _     ___   __    
-      / __\ |__   ___  __ _| |_  / __\ / /   - 20/11/2023
-     / /  | '_ \ / _ \/ _` | __|/ /   / /    - Minecraft Setup
-    / /___| | | |  __/ (_| | |_/ /___/ /___  - Optimizer
-    \____/|_| |_|\___|\__,_|\__\____/\____/    
-
-    1.Optimize
-  -----------------------------------------------------------------------------------------   
-    [1.1] - FPS patcher    
-    [1.2] - 1x block overlay  
-    [1.3] - AIO Optimize
-
-    2.Legit
-  -----------------------------------------------------------------------------------------   
-    [2.1] - lunar client
-    [2.2] - badlion client
-    [2.3] - ezping + clumsy
-
-    3.other
-  -----------------------------------------------------------------------------------------   
-    # tool, reup archive
-    [3.1] - 1.5.2 client                | [3.4] - recaf
-    [3.2] - jdk + jre                   | [3.5] - all Jar File Decompiler/editor
-    [3.3] - intent.store archive        |
-    # launcher
-    [3.1.1] - Hello Launcher
-    [3.1.2] - Legacy Launcher
-    [3.1.3] - Pojavlauncher
-    [3.1.4] - Titan launcher
-    [3.1.5] - Tlauncher
-
-    4.ghost
-  -----------------------------------------------------------------------------------------   
-
-    # [4.1] raven - [ archive + fork]
-    # [4.2] inject - [archive]
-    # [4.3] other forge ghost       
-
-    6.recommend
-  -----------------------------------------------------------------------------------------   
-    [6.1] - air  : 0 0 grim velocity , grim regen , polar sprint scaffold 
-    [6.2] - vapev4  
-    [6.3] - minusbounce 
-    [6.4] - rise 6
-                
-    
-  
+     ______                    _____ 
+    |  ____|                  / ____|
+    | |__ ___  _ __ __ _  ___| |  __ 
+    |  __/ _ \| '__/ _` |/ _ \ | |_ |
+    | | | (_) | | | (_| |  __/ |__| |
+    |_|  \___/|_|  \__, |\___|\_____|
+                    __/ |            
+                    |___/             
+    all forge ghost - only mediafire
+    -----------------------------------
+     [1.1] - Kriso B1
+     [1.2] - Skilled V1
+     [1.3] - Skilled V2
+     [1.4] - Skilled V3 Fixed
+     [1.5] - Skilled V3
+     [1.6] - Sapphire Lite
+     [1.7] - AutoJumpReset
+     [1.8] - AutoSprintReset
+     [1.9] - Bayoneta
+     [1.10] - BetterTimeChanger
+     [1.11] - Breeze
+     [1.12] - Crystal
+     [1.13] - Cyanide
+     [1.14] - DuelsEssentials
+     [1.15] - Emo
+     [1.16] - Explicit B9
+     [1.17] - FakeHackersMod
+     [1.18] - Ghost S
+     [1.19] - Gucci
+     [1.20] - Huume
+     [1.21] - Lowkey V2
+     [1.22] - Lowkey
+     [1.23] - Magenta
+     [1.24] - Merge
+     [1.25] - Mob
+     [1.26] - Nebula
+     [1.27] - NoJumpDelay
+     [1.28] - PingChanger
+     [1.29] - Prestige
+     [1.30] - Sumo
+     [1.31] - TNTSumo
+     [1.32] - ReachDisplay
+     [1.33] - Spook
+     [1.34] - Trump
+     [1.35] - Uboa V2
+     [1.36] - Vape V4.06
+     [1.37] - Vape V3.25
+     [1.38] - Vea
+     [1.39] - Willy
+     [1.40] - WTap v3
+     [1.41] - Xenon
+     [1.42] - Zyklon
+     

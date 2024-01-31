@@ -7,42 +7,47 @@
 
     1.Optimize
   -----------------------------------------------------------------------------------------   
-    [1.1] - FPS patcher    
+    [1.1] - FPS patcher    - soon
     [1.2] - 1x block overlay  
-    [1.3] - AIO Optimize
+    [1.3] - AIO Optimize - soon
 
     2.Legit
   -----------------------------------------------------------------------------------------   
-    [2.1] - lunar client
-    [2.2] - badlion client
-    [2.3] - ezping + clumsy
-
+    [2.1] - lunar client - soon
+    [2.2] - badlion client - soon
+    [2.3] - clumsy [get download only]
+    [2.4] - other pvp client - soon
     3.other
   -----------------------------------------------------------------------------------------   
     # tool, reup archive
-    [3.1] - 1.5.2 client                | [3.4] - recaf
-    [3.2] - jdk + jre                   | [3.5] - all Jar File Decompiler/editor
-    [3.3] - intent.store archive        |
-    # launcher
+    [3.1] - intent.store archive  - soon
+    [3.2] - mimhax clone - soon
+    [3.3] - blatant archive - soon
+    # launche r- soon
     [3.1.1] - Hello Launcher
     [3.1.2] - Legacy Launcher
     [3.1.3] - Pojavlauncher
     [3.1.4] - Titan launcher
     [3.1.5] - Tlauncher
-
+    [3.1.6] - other archive
     4.ghost
   -----------------------------------------------------------------------------------------   
-
     # [4.1] raven - [ archive + fork]
-    # [4.2] inject - [archive]
+    # [4.2] inject - [archive] - soon
     # [4.3] other forge ghost       
+    # [4.4] vape v4 - updating
 
-    6.recommend
+    6.recommend - soon
   -----------------------------------------------------------------------------------------   
     [6.1] - air  : 0 0 grim velocity , grim regen , polar sprint scaffold 
     [6.2] - vapev4  
     [6.3] - minusbounce 
     [6.4] - rise 6
                 
-    
+    7.page   - soon
+  -----------------------------------------------------------------------------------------   
+    [7.1] - Utility client 
+    [7.2] - anti cheat
+    [7.2] - bedrock
+
   

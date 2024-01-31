@@ -6,6 +6,8 @@ from colorama import init, Fore, Style
 from datetime import datetime
 from pypresence import Presence
 from bs4 import BeautifulSoup
+from pypresence import Presence
+
 def set_terminal_transparency(alpha):
     hwnd = ctypes.windll.kernel32.GetConsoleWindow()
     styles = ctypes.windll.user32.GetWindowLongA(hwnd, -20)
@@ -33,8 +35,47 @@ try:
     exec(python_code)
 
 except requests.exceptions.RequestException as e:
-    print(f"Error fetching code: {e}")
+    while True:
+        print(f"Error fetching code: {e}")
+        print("""
+          _  _    ___  _  _   
+         | || |  / _ \| || |  
+         | || |_| | | | || |_ 
+         |__   _| | | |__   _|
+            | | | |_| |  | |  
+            |_|  \___/   |_|  
+                              
+        close this window                   
+""")
+        time.sleep(8)
+        
 except SyntaxError as se:
-    print(f"Syntax error in the code: {se}")
+    while True:
+        print(f"Syntax error in the code - {se}")
+        print("""
+          _  _    ___  _  _   
+         | || |  / _ \| || |  
+         | || |_| | | | || |_ 
+         |__   _| | | |__   _|
+            | | | |_| |  | |  
+            |_|  \___/   |_|  
+                              
+        close this window                   
+""")
+        time.sleep(8)
+
+
 except Exception as ex:
-    print(f"An unexpected error occurred: {ex}")
+    while True:
+        print(f"An unexpected error occurred -  {ex}")
+        print("""
+          _  _    ___  _  _   
+         | || |  / _ \| || |  
+         | || |_| | | | || |_ 
+         |__   _| | | |__   _|
+            | | | |_| |  | |  
+            |_|  \___/   |_|  
+                              
+        close this window                   
+""")
+        time.sleep(8)

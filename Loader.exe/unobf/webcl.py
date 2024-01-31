@@ -1,16 +1,13 @@
 
-import requests,os,webbrowser
-import time,os,sys,ctypes,webbrowser,shutil,mediafire_dl,requests,colorama
-from pystyle import  Center, Anime, Colors, Colorate, Write 
-import fade
-from colorama import init, Fore, Style
-from datetime import datetime
-from pypresence import Presence
-from bs4 import BeautifulSoup
+
+
+global site_name,visited_links,error_links,project_name,base_dir,project_path,link,save,save_assets,crawl
 base_dir = os.getcwd()
-
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')
 Write.Print(f"""
-
+    0 - to go back
+            
             ╔══════════════════════════════════════════════════════════╗
             ║    ___ _                                                 ║     
             ║   / __\ |__   ___  __ _| |_  / __\ / /                   ║ 
@@ -23,6 +20,7 @@ Write.Print(f"""
 
 site_name = Write.Input(f'      Link website ~/>    ', Colors.blue_to_white, interval=0.000)
 if site_name == "0":
+    cls()
     code_url = "https://frenda-r.web.app/text/hub.py"
     try:
         # msvcrt.getch()

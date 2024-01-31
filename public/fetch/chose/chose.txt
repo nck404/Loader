@@ -1,6 +1,4 @@
 
-        Enter the number that matches the one you want to enter.
-
         # 1. window
             [1.1] - Window-setup    |  [1.3] - render     | [1.5] - tool
             [1.2] - window theme    |  [1.4] - dev        | 
@@ -10,4 +8,4 @@
             [2.3] - gta (locked)             
             [2.4] - valorant,cs2,csgo (locked)          
             [2.5] - game archive  
-        [>] update 1.1
+        [>] update 1.2

@@ -6,6 +6,8 @@ from colorama import init, Fore, Style
 from datetime import datetime
 from pypresence import Presence
 from bs4 import BeautifulSoup
+from pypresence import Presence
+
 def set_terminal_transparency(alpha):
     hwnd = ctypes.windll.kernel32.GetConsoleWindow()
     styles = ctypes.windll.user32.GetWindowLongA(hwnd, -20)

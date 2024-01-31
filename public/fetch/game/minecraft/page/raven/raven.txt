@@ -10,17 +10,18 @@
     to bypass most servers 
     -----------------------------------
     [1.1] - raven b++           
-    [1.2] - raven b4         
+    [1.2] - raven b4   - please download on website   
     [1.3] - raven b++ rb
     [1.4] - raven b1,b2,b3      
     [1.5] - raven s1,s+,s++  
     [1.6] - raven b-
     [1.7] - raven b+++          
-    [1.8] - ravenX           
+    [1.8] - ravenX     - please download on website        
     [1.9] - raven n+
     [1.10] - raven b+ archive
     [1.11] - Myau 
     [1.12] - raven A
+    
                 
     
   

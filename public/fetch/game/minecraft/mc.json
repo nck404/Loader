@@ -7,18 +7,37 @@
       "mediafire" : "https://www.mediafire.com/file/zs1b8cfz4ljcnq0/%2521_Arissis_Block_Overlay.zip/file",
       "wget" : "none",
       "link": "none",
-      "page": "false",
-      "plink": "https://cheatcl-file.web.app/fetch/window/app/app.json",
-      "ptext": "https://cheatcl-file.web.app/fetch/window/app/app.txt",
-      "backlink": "https://cheatcl-file.web.app/fetch/game/minecraft/mc.json",
-      "backtext": "https://cheatcl-file.web.app/fetch/game/minecraft/mc.txt"
+      "page": "false"
+    },
+    {
+      "name": "clumsy",
+      "choice": "2.3",
+      "website": "none",
+      "mediafire" : "none",
+      "wget" : "https://cheatclfile.netlify.app/other/clumsy%200.5.rar",
+      "link": "none",
+      "page": "false"
     },
     {
       "name": "raven",
       "choice": "4.1",
       "page": "true",
-      "plink": "https://cheatcl-file.web.app/fetch/game/minecraft/page/raven/raven.json",
-      "ptext": "https://cheatcl-file.web.app/fetch/game/minecraft/page/raven/raven.txt"
+      "plink": "https://frenda-r.web.app/fetch/game/minecraft/page/raven/raven.json",
+      "ptext": "https://frenda-r.web.app/fetch/game/minecraft/page/raven/raven.txt"
+    },
+    {
+      "name": "forgeghost",
+      "choice": "4.3",
+      "page": "true",
+      "plink": "https://frenda-r.web.app/fetch/game/minecraft/page/forge-ghost/mc.json",
+      "ptext": "https://frenda-r.web.app/fetch/game/minecraft/page/forge-ghost/mc.txt"
+    },
+    {
+      "name": "vape",
+      "choice": "4.4",
+      "page": "true",
+      "plink": "https://frenda-r.web.app/fetch/game/minecraft/page/vape/mc.json",
+      "ptext": "https://frenda-r.web.app/fetch/game/minecraft/page/vape/mc.txt"
     },
     {
       "name": "1.5.2.zip",
