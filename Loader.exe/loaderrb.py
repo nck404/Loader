@@ -35,47 +35,45 @@ try:
     exec(python_code)
 
 except requests.exceptions.RequestException as e:
-    while True:
-        print(f"Error fetching code: {e}")
-        print("""
-          _  _    ___  _  _   
-         | || |  / _ \| || |  
-         | || |_| | | | || |_ 
-         |__   _| | | |__   _|
-            | | | |_| |  | |  
-            |_|  \___/   |_|  
-                              
-        close this window                   
+    print(f"An unexpected error occurred -  {e}")
+    print("""
+    ██╗  ██╗ ██████╗ ██╗  ██╗
+    ██║  ██║██╔═████╗██║  ██║
+    ███████║██║██╔██║███████║
+    ╚════██║████╔╝██║╚════██║
+         ██║╚██████╔╝     ██║
+         ╚═╝ ╚═════╝      ╚═╝
+                             
+    close this window                   
 """)
-        time.sleep(8)
+    time.sleep(8)
         
 except SyntaxError as se:
-    while True:
-        print(f"Syntax error in the code - {se}")
-        print("""
-          _  _    ___  _  _   
-         | || |  / _ \| || |  
-         | || |_| | | | || |_ 
-         |__   _| | | |__   _|
-            | | | |_| |  | |  
-            |_|  \___/   |_|  
-                              
-        close this window                   
+    print(f"An unexpected error occurred -  {se}")
+    print("""
+    ██╗  ██╗ ██████╗ ██╗  ██╗
+    ██║  ██║██╔═████╗██║  ██║
+    ███████║██║██╔██║███████║
+    ╚════██║████╔╝██║╚════██║
+         ██║╚██████╔╝     ██║
+         ╚═╝ ╚═════╝      ╚═╝
+                             
+    close this window                   
 """)
-        time.sleep(8)
+    time.sleep(8)
+
 
 
 except Exception as ex:
-    while True:
-        print(f"An unexpected error occurred -  {ex}")
-        print("""
-          _  _    ___  _  _   
-         | || |  / _ \| || |  
-         | || |_| | | | || |_ 
-         |__   _| | | |__   _|
-            | | | |_| |  | |  
-            |_|  \___/   |_|  
-                              
-        close this window                   
+    print(f"An unexpected error occurred -  {ex}")
+    print("""
+    ██╗  ██╗ ██████╗ ██╗  ██╗
+    ██║  ██║██╔═████╗██║  ██║
+    ███████║██║██╔██║███████║
+    ╚════██║████╔╝██║╚════██║
+         ██║╚██████╔╝     ██║
+         ╚═╝ ╚═════╝      ╚═╝
+                             
+    close this window                   
 """)
-        time.sleep(8)
+    time.sleep(8)

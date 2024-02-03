@@ -276,7 +276,8 @@ def fetch_link_from_json(json_url, choice,blink):
                     if entry["page"] == "true":
                         cls()
                         print(f"  {rgb(175, 143, 217)} [i] multi : true")
-                        print(f" {rgb(145, 192, 135)}Page {choice} - {rgb(178, 186, 216)} 0 to go back")
+                        print(cyan_gradient('  < cheatcl > You should download by using mediafire'))
+                        print(f"   {rgb(145, 192, 135)}Page {choice} - {rgb(178, 186, 216)} 0 to go back")
                         page(entry["ptext"])
                         choice = finput()
                         if choice == "0":
@@ -513,13 +514,15 @@ def chose():
                 alert2("error",se)
             except Exception as ex:
                 alert2("error",ex)
-        
+            print(cyan_gradient("     done \n"))
+            time.sleep(1)
 
     global link,text_link
     link, text_link = fs(chosejson, choice)
     if link and text_link:
         global text
         cls()
+        print(cyan_gradient('< cheatcl > You should download by using mediafire'))
         print(f" {rgb(145, 192, 135)}Page {choice} - {rgb(178, 186, 216)} 0 to go back")
         text = requests.get(text_link).text
         fprint(text, selected_theme)

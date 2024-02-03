@@ -1,0 +1,101 @@
+{
+  "data": [
+    {
+      "name": "ZeroDay",
+      "choice": "1.7",
+      "page": "true",
+      "plink": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/intent%20archive/zeroday/mc.json",
+      "ptext": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/intent%20archive/zeroday/mc.txt"
+    },
+    {
+      "name": "Kawaii.zip",
+      "choice": "1.1",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/tf1rs1pzujnjnw3/Kawaii.zip/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "Pulsive 2.0.zip",
+      "choice": "1.2",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/kgmnzcb63xcsz8r/Pulsive_2.0.zip/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "Juul.zip",
+      "choice": "1.4",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/t5faloyu0lefgxj/Juul.zip/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "Diablo 1.3.2.zip",
+      "choice": "1.3",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/mmukmcg1d7ivhzv/Diablo_1.3.2.zip/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "Rose.zip",
+      "choice": "1.5",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/08855wqomgwxxos/Rose.zip/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "Tenacity 5.1.zip",
+      "choice": "1.6",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/ospbu0fnzvvb5c0/Tenacity_5.1.zip/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "FusionX.zip",
+      "choice": "1.8",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/oczu6sc3qn1oh9r/FusionX.zip/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "Ketamine(2).zip",
+      "choice": "1.9",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/zdg2cxw7jz5kot4/Ketamine%25282%2529.zip/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "Azura X.zip",
+      "choice": "1.10",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/2i302sbtod1nzt1/Azura_X.zip/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "Novoline.zip",
+      "choice": "1.11",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/0j9d5zmdb2ywkvd/Novoline.zip/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    }
+  ]
+}

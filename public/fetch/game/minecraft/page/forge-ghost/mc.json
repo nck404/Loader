@@ -377,6 +377,51 @@
       "wget": "none",
       "link": "none",
       "page": "false"
+    },
+    {
+      "name": "CPS-Cap-Bypass-1.0.jar",
+      "choice": "1.43",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/toj1ev2us8fz9y7/CPS-Cap-Bypass-1.0.jar/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "Telly Bridge Bot FIX.jar",
+      "choice": "1.44",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/yz9le10vsaro7u8/Telly_Bridge_Bot_FIX.jar/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "TellyBridge-Bot-UNLOCKED.jar",
+      "choice": "1.45",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/p74j38krbjeg4af/TellyBridge-Bot-UNLOCKED.jar/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "Godbridge Assist Mod [1.8.9].jar",
+      "choice": "1.46",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/lo0ufw7u2hdmx5d/Godbridge_Assist_Mod_%255B1.8.9%255D.jar/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "Auto Clutch Mod FIX.jar",
+      "choice": "1.47",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/kgzyxzwspid0ygy/Auto_Clutch_Mod_FIX.jar/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
     }
   ]
 }

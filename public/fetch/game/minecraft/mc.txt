@@ -7,23 +7,23 @@
 
     1.Optimize
   -----------------------------------------------------------------------------------------   
-    [1.1] - FPS patcher    - soon
+    [1.1] - FPS patcher   
     [1.2] - 1x block overlay  
     [1.3] - AIO Optimize - soon
 
     2.Legit
   -----------------------------------------------------------------------------------------   
-    [2.1] - lunar client - soon
-    [2.2] - badlion client - soon
+    [2.1] - lunar client 
+    [2.2] - badlion client 
     [2.3] - clumsy [get download only]
-    [2.4] - other pvp client - soon
+    [2.4] - other pvp client 
     3.other
   -----------------------------------------------------------------------------------------   
     # tool, reup archive
-    [3.1] - intent.store archive  - soon
+    [3.1] - intent.store archive 
     [3.2] - mimhax clone - soon
-    [3.3] - blatant archive - soon
-    # launche r- soon
+    [3.3] - blatant client
+    # launcher - soon
     [3.1.1] - Hello Launcher
     [3.1.2] - Legacy Launcher
     [3.1.3] - Pojavlauncher
@@ -42,7 +42,7 @@
     [6.1] - air  : 0 0 grim velocity , grim regen , polar sprint scaffold 
     [6.2] - vapev4  
     [6.3] - minusbounce 
-    [6.4] - rise 6
+    [6.4] - rise 
                 
     7.page   - soon
   -----------------------------------------------------------------------------------------   

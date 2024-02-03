@@ -2,8 +2,8 @@
     "data": [
       {
         "choice": "1.1",
-        "link": "https://frenda-r.web.app/fetch/game/app/app.json",
-        "text": "https://frenda-r.web.app/fetch/game/app/app.txt"
+        "link": "https://frenda-r.web.app/fetch/window/app/app.json",
+        "text": "https://frenda-r.web.app/fetch/window/app/app.txt"
       },
       
       {
@@ -35,6 +35,12 @@
         "choice": "2.3",
         "link": "https://frenda-r.web.app/fetch/dev/dev.json",
         "text": "https://frenda-r.web.app/fetch/dev/changlog.txt"
+      }
+      ,
+      {
+        "choice": "2.4",
+        "link": "https://frenda-r.web.app/fetch/game/valo/mc.json",
+        "text": "https://frenda-r.web.app/fetch/game/valo/mc.txt"
       }
     ]
   }

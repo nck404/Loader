@@ -10,4 +10,8 @@
      # vape forge
      [1.1] - vape 4.06
      [1.2] - vape 3.25
+     # other 
+     [2.1] - vape v4.10 source
+     [2.2] - vape v4 web fe src
+     [2.3] - vape v4 dump 
      

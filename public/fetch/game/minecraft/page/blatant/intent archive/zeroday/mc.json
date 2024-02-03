@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "name": "ZeroDay.zip",
+      "choice": "1.2",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/vixh6vay3nxk4py/ZeroDay.zip/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "ZeroDay b20.6.zip",
+      "choice": "1.1",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/xou2fi8q862n5vb/ZeroDay_b20.6.zip/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    }
+  ]
+}

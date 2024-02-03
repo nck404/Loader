@@ -42,7 +42,7 @@
      [1.32] - ReachDisplay
      [1.33] - Spook
      [1.34] - Trump
-     [1.35] - Uboa V2
+     [1.35] - Uboa V2 [Dangerous File Blocked]
      [1.36] - Vape V4.06
      [1.37] - Vape V3.25
      [1.38] - Vea
@@ -50,4 +50,8 @@
      [1.40] - WTap v3
      [1.41] - Xenon
      [1.42] - Zyklon
-     
+     [1.43] - cps cap bypass
+     [1.44] - Telly Bridge Bot FIX
+     [1.45] - Telly Bridge Bot UNLOCKED
+     [1.46] - Godbridge Assist Mod
+     [1.47] - Auto Clutch Mod FIX

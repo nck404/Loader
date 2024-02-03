@@ -1,10 +1,10 @@
 {
   "data": [
     {
-      "name": "! Arissis Block Overlay.zip",
-      "choice": "1.2",
+      "name": "M3lancholia_Valorant.zip",
+      "choice": "1.1",
       "website": "none",
-      "mediafire" : "https://www.mediafire.com/file/zs1b8cfz4ljcnq0/%2521_Arissis_Block_Overlay.zip/file",
+      "mediafire" : "https://www.mediafire.com/file/katqcfbvkcub0qm/M3lancholia_Valorant.zip/file",
       "wget" : "none",
       "link": "none",
       "page": "false"
@@ -65,13 +65,6 @@
       "page": "true",
       "plink": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/mc.json",
       "ptext": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/mc.txt"
-    },
-    {
-      "name": "rise",
-      "choice": "6.4",
-      "page": "true",
-      "plink": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/rise/mc.json",
-      "ptext": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/rise/mc.txt"
     },
     {
       "name": "pvp",

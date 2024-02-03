@@ -1,0 +1,11 @@
+{
+  "data": [
+    {
+      "name": "rise",
+      "choice": "1.4",
+      "page": "true",
+      "plink": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/rise/mc.json",
+      "ptext": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/rise/mc.txt"
+    } 
+  ]
+}
