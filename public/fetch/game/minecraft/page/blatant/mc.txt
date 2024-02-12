@@ -17,4 +17,7 @@
     [1.10] - breeze
     [1.11] - myau
     [1.12] - gothaj
-    [1.13] -  Nursultan Client [V6.5]
+    [1.13] - Nursultan Client [V6.5]
+    [1.14] - Raven b4
+    [1.15] - November
+    [1.16] - eject

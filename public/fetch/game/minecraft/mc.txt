@@ -9,7 +9,7 @@
   -----------------------------------------------------------------------------------------   
     [1.1] - FPS patcher   
     [1.2] - 1x block overlay  
-    [1.3] - AIO Optimize - soon
+    [1.3] - AIO Optimize 
 
     2.Legit
   -----------------------------------------------------------------------------------------   
@@ -17,29 +17,26 @@
     [2.2] - badlion client 
     [2.3] - clumsy [get download only]
     [2.4] - other pvp client 
+
     3.other
   -----------------------------------------------------------------------------------------   
-    # tool, reup archive
     [3.1] - intent.store archive 
-    [3.2] - mimhax clone - soon
-    [3.3] - blatant client
-    # launcher - soon
-    [3.1.1] - Hello Launcher
-    [3.1.2] - Legacy Launcher
-    [3.1.3] - Pojavlauncher
-    [3.1.4] - Titan launcher
-    [3.1.5] - Tlauncher
-    [3.1.6] - other archive
+    [3.2] - tool
+    [3.3] - blatant client - updating
+    [3.4] - launcher - soon
+    [3.5] - source - soon
+    
     4.ghost
   -----------------------------------------------------------------------------------------   
     # [4.1] raven - [ archive + fork]
-    # [4.2] inject - [archive] - soon
+    # [4.2] inject - [archive] - updating
     # [4.3] other forge ghost       
     # [4.4] vape v4 - updating
+    # [4.5] auto clickr - soon
 
-    6.recommend - soon
+    6.recommend 
   -----------------------------------------------------------------------------------------   
-    [6.1] - air  : 0 0 grim velocity , grim regen , polar sprint scaffold 
+    [6.1] - air  : 0 0 grim velocity , grim regen , polar sprint scaffold - soon
     [6.2] - vapev4  
     [6.3] - minusbounce 
     [6.4] - rise 
@@ -49,5 +46,6 @@
     [7.1] - Utility client 
     [7.2] - anti cheat
     [7.2] - bedrock
+    [7.3] - smp cheat pack
 
   

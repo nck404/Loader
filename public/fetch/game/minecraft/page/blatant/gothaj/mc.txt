@@ -1,0 +1,8 @@
+    
+    # Gothaj
+    - Download Gothaj.zip.
+    - Un-zip it and put it into .minecraft/versions
+    - Start game with instance "Gothaj" in Version List. 
+    -----------------------------------
+    [1.1] - 2.0
+    [1.2] - 3.0

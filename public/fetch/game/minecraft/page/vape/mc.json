@@ -36,5 +36,15 @@
       "link": "none",
       "page": "false"
     }
+    ,
+    {
+      "name": "Vape.zip",
+      "choice": "3.1",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/pguvyhu6fs1e087/Vape.zip/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    }
   ]
 }

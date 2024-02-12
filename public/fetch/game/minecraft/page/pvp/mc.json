@@ -233,6 +233,15 @@
       "wget": "none",
       "link": "none",
       "page": "false"
+    },
+    {
+      "name": "v.zip",
+      "choice": "1.27",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/bzqejnsfxypk54n/v.zip/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
     }
   ]
 }

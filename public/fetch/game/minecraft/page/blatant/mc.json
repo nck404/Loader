@@ -6,6 +6,40 @@
       "page": "true",
       "plink": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/rise/mc.json",
       "ptext": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/rise/mc.txt"
-    } 
+    },
+    {
+      "name": "breeze_crack.jar",
+      "choice": "1.10",
+      "website": "none",
+      "mediafire": "https://www.mediafire.com/file/x10gzdgu8uq727w/breeze_crack.jar/file",
+      "wget": "none",
+      "link": "none",
+      "page": "false"
+    },
+    {
+      "name": "augustus2.6.rar",
+      "choice": "1.8",
+      "website": "none",
+      "mediafire": "none",
+      "wget": "https://firebasestorage.googleapis.com/v0/b/cheatcl-file.appspot.com/o/blatant%2Faugustus2.6.rar?alt=media&token=2f12497d-fcb0-4138-a78c-b262531037c8",
+      "link": "none",
+      "page": "false"
+    }
+    ,
+    {
+      "name": "gothaj",
+      "choice": "1.12",
+      "page": "true",
+      "plink": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/gothaj/mc.json",
+      "ptext": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/gothaj/mc.txt"
+    }
+    ,
+    {
+      "name": "vestige",
+      "choice": "1.5",
+      "page": "true",
+      "plink": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/vestige/mc.json",
+      "ptext": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/vestige/mc.txt"
+    }
   ]
 }

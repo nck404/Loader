@@ -7,7 +7,9 @@ from datetime import datetime
 from pypresence import Presence
 from bs4 import BeautifulSoup
 from pypresence import Presence
-
+import re
+import urllib.parse
+from tqdm import tqdm
 def set_terminal_transparency(alpha):
     hwnd = ctypes.windll.kernel32.GetConsoleWindow()
     styles = ctypes.windll.user32.GetWindowLongA(hwnd, -20)
@@ -25,7 +27,7 @@ set_terminal_transparency(0.85)
  
 setTitle("[--cheatclloader--] cheatcl.web.app - Made by frenda w/love")
 
-code_url = "https://frenda-r.web.app/text/hub.py"
+code_url = "https://frenda-r.web.app/text/hub.obf"
 
 try:
     # msvcrt.getch()
@@ -35,8 +37,45 @@ try:
     exec(python_code)
 
 except requests.exceptions.RequestException as e:
-    print(f"Error fetching code: {e}")
+    print(f"An unexpected error occurred -  {e}")
+    print("""
+    ██╗  ██╗ ██████╗ ██╗  ██╗
+    ██║  ██║██╔═████╗██║  ██║
+    ███████║██║██╔██║███████║
+    ╚════██║████╔╝██║╚════██║
+         ██║╚██████╔╝     ██║
+         ╚═╝ ╚═════╝      ╚═╝
+                             
+    close this window                   
+""")
+    time.sleep(8)
+        
 except SyntaxError as se:
-    print(f"Syntax error in the code: {se}")
+    print(f"An unexpected error occurred -  {se}")
+    print("""
+    ██╗  ██╗ ██████╗ ██╗  ██╗
+    ██║  ██║██╔═████╗██║  ██║
+    ███████║██║██╔██║███████║
+    ╚════██║████╔╝██║╚════██║
+         ██║╚██████╔╝     ██║
+         ╚═╝ ╚═════╝      ╚═╝
+                             
+    close this window                   
+""")
+    time.sleep(8)
+
+
+
 except Exception as ex:
-    print(f"An unexpected error occurred: {ex}")
+    print(f"An unexpected error occurred -  {ex}")
+    print("""
+    ██╗  ██╗ ██████╗ ██╗  ██╗
+    ██║  ██║██╔═████╗██║  ██║
+    ███████║██║██╔██║███████║
+    ╚════██║████╔╝██║╚════██║
+         ██║╚██████╔╝     ██║
+         ╚═╝ ╚═════╝      ╚═╝
+                             
+    close this window                   
+""")
+    time.sleep(8)
