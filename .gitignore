@@ -65,7 +65,11 @@ node_modules/
 # dotenv environment variables file
 .env
 tool
+
 obf-build
+
 old
+
 unobf
+
 public
