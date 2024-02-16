@@ -23,7 +23,7 @@
     [3.1] - intent.store archive 
     [3.2] - tool
     [3.3] - blatant client - updating
-    [3.4] - launcher - soon
+    [3.4] - launcher - website only
     [3.5] - source - soon
     
     4.ghost

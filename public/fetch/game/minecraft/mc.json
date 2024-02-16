@@ -92,6 +92,15 @@
       "ptext": "https://frenda-r.web.app/fetch/game/minecraft/page/blatant/mc.txt"
     },
     {
+      "name": "launcher",
+      "choice": "3.4",
+      "mediafire" : "none",
+      "wget" : "none",
+      "link": "https://cheatcl.web.app/minecraft/category/%EF%B8%8Flauncher",
+      "website": "https://cheatcl.web.app/minecraft/category/%EF%B8%8Flauncher",
+      "page": "false"
+    },
+    {
       "name": "rise",
       "choice": "6.4",
       "page": "true",
